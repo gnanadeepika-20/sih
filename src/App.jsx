@@ -8,7 +8,7 @@ import {
   BookOpen, Timer, Star, RotateCcw, X, ExternalLink, ShieldAlert, ArrowLeft, ArrowUp, ArrowDown
 } from "lucide-react";
 import confetti from "canvas-confetti";
-
+import OnboardingScreen from "./components/Onboarding";
 // ─── CONSTANTS & CONFIGURATIONS ──────────────────────────────────────────────
 const LEVELS = [
   {
@@ -204,113 +204,7 @@ function HeroScreen({ onStart }) {
   );
 }
 
-// ─── ONBOARDING SCREEN ───────────────────────────────────────────────────────
-function OnboardingScreen({ onComplete }) {
-  const [name, setName] = useState("");
-  const [year, setYear] = useState("3rd Year");
-  const [stream, setStream] = useState("Computer Science / IT");
-  const [college, setCollege] = useState("");
-
-  const streams = [
-    "Computer Science / IT",
-    "Electronics (ECE)",
-    "Mechanical / Civil",
-    "Data Science / AI",
-    "Commerce / Business",
-    "Arts / Humanities",
-    "Other"
-  ];
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (name.trim()) {
-      onComplete({ name: name.trim(), year, stream, college: college.trim() || "National Institute" });
-    }
-  };
-
-  return (
-    <div className="min-h-screen flex items-center justify-center px-6" style={{ background: "linear-gradient(135deg, #0A0C27 0%, #12143A 50%, #1B0C3A 100%)" }}>
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-200px] right-[-100px] w-[500px] h-[500px] rounded-full opacity-10 blur-[100px]" style={{ background: "radial-gradient(circle, #FFB238, transparent)" }} />
-      </div>
-      <div className="relative z-10 w-full max-w-lg p-8 rounded-3xl border border-white/10 bg-[#16194A]/60 backdrop-blur-xl shadow-2xl">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-[#FFB238]/20" style={{ background: "linear-gradient(135deg, #FFB238, #FF7A6B)" }}>
-            <Brain size={20} color="#12143A" />
-          </div>
-          <span className="text-xl font-bold text-white" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>SkillQuest</span>
-        </div>
-
-        <h2 className="text-3xl font-bold text-white mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Initialize Profile</h2>
-        <p className="text-white/50 text-sm mb-6">Tell us about yourself to tailor the logic analysis metrics.</p>
-
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <div>
-            <label className="text-xs font-mono text-white/40 uppercase tracking-wider block mb-1.5 font-bold">Your Name</label>
-            <input
-              type="text"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="e.g. Rahul Sharma"
-              className="w-full px-4 py-3 rounded-xl text-sm text-white outline-none transition-all duration-300 focus:ring-2 focus:ring-[#FFB238]/40 bg-white/5 border border-white/10"
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="text-xs font-mono text-white/40 uppercase tracking-wider block mb-1.5 font-bold">Academic Year</label>
-              <select
-                value={year}
-                onChange={(e) => setYear(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl text-sm text-white outline-none cursor-pointer bg-[#12143A] border border-white/10"
-              >
-                {["1st Year", "2nd Year", "3rd Year", "4th Year"].map(y => <option key={y} value={y}>{y}</option>)}
-              </select>
-            </div>
-            <div>
-              <label className="text-xs font-mono text-white/40 uppercase tracking-wider block mb-1.5 font-bold">College / Institution</label>
-              <input
-                type="text"
-                value={college}
-                onChange={(e) => setCollege(e.target.value)}
-                placeholder="e.g. NIT Trichy"
-                className="w-full px-4 py-3 rounded-xl text-sm text-white outline-none transition-all duration-300 focus:ring-2 focus:ring-[#FFB238]/40 bg-white/5 border border-white/10"
-              />
-            </div>
-          </div>
-          <div>
-            <label className="text-xs font-mono text-white/40 uppercase tracking-wider block mb-2 font-bold">Your Stream</label>
-            <div className="flex flex-wrap gap-2">
-              {streams.map((s) => (
-                <button
-                  type="button"
-                  key={s}
-                  onClick={() => setStream(s)}
-                  className="px-3.5 py-2 rounded-xl text-xs font-semibold transition-all duration-300 cursor-pointer"
-                  style={{
-                    background: stream === s ? "#FFB238" : "rgba(255,255,255,0.06)",
-                    color: stream === s ? "#12143A" : "rgba(255,255,255,0.6)",
-                    border: `1px solid ${stream === s ? "#FFB238" : "rgba(255,255,255,0.1)"}`,
-                  }}
-                >
-                  {s}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full py-4 rounded-xl font-bold text-sm transition-all duration-300 active:scale-95 mt-4 cursor-pointer"
-            style={{ background: "linear-gradient(135deg, #FFB238, #FF7A6B)", color: "#12143A", fontFamily: "'Space Grotesk', sans-serif", boxShadow: "0 0 30px rgba(255,178,56,0.3)" }}
-          >
-            Access Logic Lab →
-          </button>
-        </form>
-      </div>
-    </div>
-  );
-}
+// Onboarding imported from components/Onboarding.jsx
 
 // ─── JOURNEY SCREEN ──────────────────────────────────────────────────────────
 function JourneyScreen({ levels, completedLevels, levelScores, totalXP, onStartLevel, onShowResults }) {
@@ -1273,14 +1167,21 @@ function ResultsScreen({ user, levelScores, onRestart }) {
   ];
 
   // Logic assessment summary copy
-  const getBadgeText = (score) => {
-    if (score >= 90) return { title: "Elite Master Strategist", desc: "You possess exceptional forward planning and dynamic pattern analysis capabilities." };
-    if (score >= 80) return { title: "Strong Logical Thinker", desc: "You maintain high accuracy and strategic structure under cognitive load." };
-    if (score >= 65) return { title: "Analytical Navigator", desc: "Solid spatial and reasoning capacities, with room to optimize path sequences." };
-    return { title: "Experimental Optimizer", desc: "Good trial-and-error solver. Focus on spatial layout analysis for design scaling." };
+  const getBadgeText = (score, stage) => {
+    if (stage === 'school') {
+      if (score >= 90) return { title: "STEM Trailblazer", desc: "You possess exceptional forward planning and dynamic pattern analysis capabilities, ideal for STEM fields." };
+      if (score >= 80) return { title: "Analytical Explorer", desc: "You maintain high accuracy and strategic structure, making you great for logic-heavy subjects." };
+      if (score >= 65) return { title: "Creative Problem Solver", desc: "Solid spatial and reasoning capacities, great for applied arts and sciences." };
+      return { title: "Foundational Builder", desc: "Good trial-and-error solver. Focus on spatial layout analysis for design and arts." };
+    } else {
+      if (score >= 90) return { title: "Elite Master Strategist", desc: "Your scores map perfectly to Data Science or Backend Architecture roles." };
+      if (score >= 80) return { title: "Strong Logical Thinker", desc: "You'd excel in Product Management or Frontend Engineering." };
+      if (score >= 65) return { title: "Analytical Navigator", desc: "Solid spatial reasoning, suitable for UI/UX Design or Financial Analysis." };
+      return { title: "Experimental Optimizer", desc: "Good trial-and-error solver. Focus on QA Engineering or Operations roles." };
+    }
   };
 
-  const evaluation = getBadgeText(finalScore);
+  const evaluation = getBadgeText(finalScore, user?.stage || 'college');
 
   return (
     <div className="min-h-screen" style={{ background: "linear-gradient(135deg, #0A0C27 0%, #12143A 60%, #150A2E 100%)" }}>
