@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import confetti from "canvas-confetti";
 import OnboardingScreen from "./components/Onboarding";
+import PetCompanion, { ForestPathTransition } from "./components/PetCompanion";
 // ─── CONSTANTS & CONFIGURATIONS ──────────────────────────────────────────────
 const LEVELS = [
   {
@@ -207,17 +208,18 @@ function HeroScreen({ onStart }) {
 // Onboarding imported from components/Onboarding.jsx
 
 // ─── JOURNEY SCREEN ──────────────────────────────────────────────────────────
-function JourneyScreen({ levels, completedLevels, levelScores, totalXP, onStartLevel, onShowResults }) {
+function JourneyScreen({ levels, completedLevels, levelScores, totalXP, user, onStartLevel, onShowResults }) {
   const isLevelUnlocked = (lvlId) => {
     if (lvlId === 1) return true;
     return completedLevels.includes(lvlId - 1);
   };
 
   const isAllLevelsCompleted = levels.every(l => completedLevels.includes(l.id));
+  const currentStage = Math.min(4, completedLevels.length + 1);
 
   return (
     <div className="min-h-screen px-6 py-12 flex flex-col items-center" style={{ background: "linear-gradient(135deg, #0A0C27 0%, #12143A 60%, #170A2E 100%)" }}>
-      <div className="w-full max-w-2xl flex items-center justify-between mb-10 border-b border-white/10 pb-6">
+      <div className="w-full max-w-2xl flex items-center justify-between mb-8 border-b border-white/10 pb-6">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl flex items-center justify-center shadow-lg shadow-[#FFB238]/20" style={{ background: "linear-gradient(135deg, #FFB238, #FF7A6B)" }}>
             <Brain size={18} color="#12143A" />
@@ -230,9 +232,35 @@ function JourneyScreen({ levels, completedLevels, levelScores, totalXP, onStartL
         </div>
       </div>
 
+      {/* Stitch Bento Guide Card for Animal Growth */}
+      <div className="w-full max-w-xl mb-8 bg-[#16194A]/70 border border-[#34D1BF]/30 rounded-3xl p-6 backdrop-blur-xl shadow-2xl relative overflow-hidden flex flex-col sm:flex-row items-center gap-6">
+        <div className="w-36 h-36 flex-shrink-0 flex items-center justify-center">
+          <PetCompanion stage={currentStage} petType={user?.petType || "bunny"} />
+        </div>
+        <div className="flex-1 text-center sm:text-left">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#34D1BF]/15 text-[#34D1BF] border border-[#34D1BF]/30 mb-2">
+            <span>✨ Companion Level {currentStage} / 4</span>
+          </div>
+          <h3 className="text-lg font-bold text-white font-heading">
+            {user?.name ? `${user.name}'s Animal Guide` : "Your Animal Companion"}
+          </h3>
+          <p className="text-xs text-[#9497C9] mt-1 leading-relaxed">
+            Your pet grows stronger with every completed assessment. Next evolution unlocks in the forest!
+          </p>
+
+          {/* Growth Bar */}
+          <div className="mt-3 w-full bg-[#12143A] h-2 rounded-full overflow-hidden border border-[#33366E]">
+            <div
+              className="h-full bg-gradient-to-r from-[#34D1BF] to-[#FFB238] transition-all duration-700 rounded-full"
+              style={{ width: `${(completedLevels.length / levels.length) * 100}%` }}
+            />
+          </div>
+        </div>
+      </div>
+
       <div className="w-full max-w-xl text-center mb-8">
-        <h2 className="text-3xl font-bold text-white mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Your Logic Progress</h2>
-        <p className="text-white/40 text-sm">Unlock progressive challenges to verify your advanced cognitive capacity.</p>
+        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Your Logic Progress</h2>
+        <p className="text-white/40 text-xs sm:text-sm">Unlock progressive challenges to verify your cognitive capacity.</p>
       </div>
 
       {/* Levels list */}
@@ -1202,6 +1230,32 @@ function ResultsScreen({ user, levelScores, onRestart }) {
       </div>
 
       <div className="max-w-4xl mx-auto px-6 py-10 space-y-8">
+        {/* Fully Evolved Pet Companion Bento Card (Google Stitch Design) */}
+        <div className="bg-[#16194A]/80 border border-[#FFB238]/40 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+          <div className="w-48 h-48 flex-shrink-0 flex items-center justify-center relative">
+            <PetCompanion stage={4} petType={user?.petType || "bunny"} />
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-[#FFB238]/20 text-[#FFB238] border border-[#FFB238]/40 mb-3">
+              <span>👑 Fully Evolved Animal Companion (Stage 4 Master)</span>
+            </div>
+            <h2 className="text-2xl font-bold text-white font-heading">
+              {user?.name ? `${user.name}'s Companion Guide` : "Your Master Companion"}
+            </h2>
+            <p className="text-sm text-[#9497C9] mt-2 leading-relaxed">
+              "Congratulations! You've navigated through the full cognitive forest assessment. Your animal guide has evolved into a Master Strategist to assist your career journey."
+            </p>
+            <div className="mt-4 flex flex-wrap items-center justify-center md:justify-start gap-3">
+              <span className="bg-[#12143A] text-[#34D1BF] px-3 py-1 rounded-xl text-xs font-mono border border-[#34D1BF]/30">
+                Stage 4: Grand Master
+              </span>
+              <span className="bg-[#12143A] text-[#FF7A6B] px-3 py-1 rounded-xl text-xs font-mono border border-[#FF7A6B]/30">
+                Cognitive Growth: 100%
+              </span>
+            </div>
+          </div>
+        </div>
+
         {/* Profile score and radar charts */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Detailed Skill Scores */}
@@ -1308,6 +1362,7 @@ export default function App() {
   const [completedLevels, setCompletedLevels] = useState([]);
   const [levelScores, setLevelScores] = useState({ level1: 0, level2: 0, level3: 0, level4: 0 });
   const [transitionScore, setTransitionScore] = useState(0);
+  const [showForestPath, setShowForestPath] = useState(false);
 
   const totalXP = Object.values(levelScores).reduce((a, b) => a + b, 0);
 
@@ -1331,6 +1386,11 @@ export default function App() {
   };
 
   const handleTransitionContinue = () => {
+    setShowForestPath(true);
+  };
+
+  const handleForestPathFinish = () => {
+    setShowForestPath(false);
     if (activeLevel.id < 4) {
       setScreen("journey");
     } else {
@@ -1363,8 +1423,18 @@ export default function App() {
           completedLevels={completedLevels}
           levelScores={levelScores}
           totalXP={totalXP}
+          user={user}
           onStartLevel={startLevel}
           onShowResults={() => setScreen("results")}
+        />
+      )}
+
+      {showForestPath && activeLevel && (
+        <ForestPathTransition
+          level={activeLevel.id}
+          completedLevels={completedLevels}
+          activePet={user?.petType || "bunny"}
+          onCompletePath={handleForestPathFinish}
         />
       )}
 

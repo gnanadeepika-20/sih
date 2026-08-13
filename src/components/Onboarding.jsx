@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Sparkles, ArrowRight, BookOpen, GraduationCap, Building2, User, School, Book } from "lucide-react";
+import { Sparkles, ArrowRight, BookOpen, GraduationCap, Building2, User, School, Book, Heart } from "lucide-react";
+import { PET_TYPES } from "./PetCompanion";
 
 export default function Onboarding({ onComplete }) {
   const [name, setName] = useState("");
   const [stage, setStage] = useState("college"); // 'school' or 'college'
+  const [petType, setPetType] = useState("bunny"); // 'bunny', 'kitten', 'fox', 'puppy'
   
   // College specific
   const [year, setYear] = useState("3");
@@ -42,6 +44,7 @@ export default function Onboarding({ onComplete }) {
       onComplete({
         name: name.trim(),
         stage,
+        petType,
         year,
         college: college.trim() || "National Institute of Technology",
         stream
@@ -50,6 +53,7 @@ export default function Onboarding({ onComplete }) {
       onComplete({
         name: name.trim(),
         stage,
+        petType,
         grade,
         favoriteSubject
       });
@@ -93,8 +97,30 @@ export default function Onboarding({ onComplete }) {
                 : 'text-[#9497C9] hover:text-[#F5F3ED]'
             }`}
           >
-            <GraduationCap className="w-4 h-4" /> College
-          </button>
+        </div>
+
+        {/* Pet Companion Selection */}
+        <div>
+          <label className="block text-[10px] sm:text-xs font-mono font-medium text-[#9497C9] uppercase mb-1.5 flex items-center gap-1.5">
+            <Heart className="w-3.5 h-3.5 text-[#FF7A6B]" /> Choose Your Animal Companion
+          </label>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {PET_TYPES.map((p) => (
+              <button
+                type="button"
+                key={p.id}
+                onClick={() => setPetType(p.id)}
+                className={`p-2.5 rounded-xl border text-center transition-all flex flex-col items-center justify-center gap-1 ${
+                  petType === p.id
+                    ? 'bg-[#12143A] border-[#FFB238] shadow-md shadow-[#FFB238]/10'
+                    : 'bg-[#12143A]/50 border-[#33366E] opacity-75 hover:opacity-100'
+                }`}
+              >
+                <span className="text-2xl">{p.icon}</span>
+                <span className="text-[11px] font-medium text-[#F5F3ED] leading-tight">{p.name.split(" ")[0]}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Name */}
