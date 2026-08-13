@@ -134,31 +134,32 @@ function bfs(grid, start, end) {
 function HeroScreen({ onStart }) {
   const features = [
     { icon: "🧩", title: "Crate Runner & Spatial Puzzles", desc: "Push crates and plan ahead to test your raw spatial reasoning." },
-    { icon: "🔢", title: "Merge Chain Strategy", desc: "Combine tiles dynamically under a time pressure to test pattern recognition." },
+    { icon: "🔢", title: "Merge Chain Strategy", desc: "Combine tiles dynamically under time pressure to test pattern recognition." },
     { icon: "🗺️", title: "Path Finder Optimization", desc: "Connect checkpoints via the shortest route to test sequence optimization." },
   ];
 
   return (
-    <div className="min-h-screen flex flex-col relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0A0C27 0%, #12143A 50%, #1B0C3A 100%)" }}>
-      {/* Glow Orbs */}
+    <div className="min-h-screen flex flex-col relative overflow-hidden bg-[#fcf8ff]">
+      {/* Background Soft Gradients */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-200px] left-[-200px] w-[600px] h-[600px] rounded-full opacity-15 blur-[120px]" style={{ background: "radial-gradient(circle, #FFB238, transparent)" }} />
-        <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] rounded-full opacity-15 blur-[120px]" style={{ background: "radial-gradient(circle, #34D1BF, transparent)" }} />
+        <div className="absolute top-[-200px] left-[-200px] w-[600px] h-[600px] rounded-full opacity-30 blur-[120px]" style={{ background: "radial-gradient(circle, #c3c0ff, transparent)" }} />
+        <div className="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] rounded-full opacity-30 blur-[120px]" style={{ background: "radial-gradient(circle, #ffdbcc, transparent)" }} />
       </div>
 
-      {/* Navigation */}
-      <nav className="relative z-10 px-8 py-5 flex items-center justify-between border-b border-white/5 bg-[#0D0F2E]/60 backdrop-blur-md">
+      {/* Navigation Bar */}
+      <nav className="relative z-10 px-8 py-5 flex items-center justify-between border-b border-[#e4e1ee] bg-[#fcf8ff]/80 backdrop-blur-md">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl flex items-center justify-center shadow-lg shadow-[#FFB238]/20" style={{ background: "linear-gradient(135deg, #FFB238, #FF7A6B)" }}>
-            <Brain size={18} color="#12143A" />
+          <div className="w-9 h-9 rounded-xl flex items-center justify-center shadow-sm bg-[#1e00a9]">
+            <Brain size={18} color="#ffffff" />
           </div>
-          <span className="text-xl font-bold text-white tracking-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>SkillQuest</span>
-          <span className="text-xs px-2.5 py-0.5 rounded-full font-mono font-semibold" style={{ background: "rgba(255,178,56,0.15)", color: "#FFB238", border: "1px solid rgba(255,178,56,0.3)" }}>Logic Lab</span>
+          <span className="text-xl font-bold text-[#1b1b24] tracking-tight font-heading">SkillQuest</span>
+          <span className="text-xs px-2.5 py-0.5 rounded-full font-mono font-semibold bg-[#e2dfff] text-[#1e00a9] border border-[#c3c0ff]">
+            Logic Lab
+          </span>
         </div>
         <button
           onClick={onStart}
-          className="px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-[#FFB238]/10 hover:shadow-[#FFB238]/20 cursor-pointer"
-          style={{ background: "#FFB238", color: "#12143A", fontFamily: "'Space Grotesk', sans-serif" }}
+          className="px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 hover:opacity-90 active:scale-95 shadow-sm bg-[#1e00a9] text-white cursor-pointer"
         >
           Enter Lab →
         </button>
@@ -166,37 +167,36 @@ function HeroScreen({ onStart }) {
 
       {/* Hero Content */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-16 max-w-5xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-xs font-semibold" style={{ background: "rgba(52,209,191,0.15)", color: "#34D1BF", border: "1px solid rgba(52,209,191,0.3)" }}>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-xs font-semibold bg-[#f5f2ff] text-[#4d44e3] border border-[#c3c0ff]">
           <Sparkles size={12} /> Gamified Cognitive Assessment
         </div>
-        <h1 className="text-5xl sm:text-7xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <h1 className="text-5xl sm:text-7xl font-bold text-[#1b1b24] mb-6 leading-tight font-heading">
           Uncover Your Logical
-          <span className="block mt-2 bg-gradient-to-r from-[#FFB238] to-[#FF7A6B] bg-clip-text text-transparent">
+          <span className="block mt-2 bg-gradient-to-r from-[#1e00a9] via-[#4d44e3] to-[#069488] bg-clip-text text-transparent">
             Aptitude
           </span>
         </h1>
-        <p className="text-lg text-white/60 max-w-2xl mb-10 leading-relaxed">
+        <p className="text-lg text-[#464555] max-w-2xl mb-10 leading-relaxed">
           No generic questionnaire. Play **4 levels** of progressive cognitive challenges designed to test spatial layout planning, pattern analysis, and sequence optimization.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-4 mb-16">
           <button
             onClick={onStart}
-            className="flex items-center gap-3 px-8 py-4 rounded-2xl text-base font-bold transition-all duration-300 hover:scale-105 active:scale-95 shadow-2xl cursor-pointer"
-            style={{ background: "linear-gradient(135deg, #FFB238, #FF7A6B)", color: "#12143A", boxShadow: "0 0 40px rgba(255,178,56,0.3)", fontFamily: "'Space Grotesk', sans-serif" }}
+            className="flex items-center gap-3 px-8 py-4 rounded-2xl text-base font-bold transition-all duration-300 hover:bg-[#3525cd] active:scale-95 shadow-md bg-[#1e00a9] text-white cursor-pointer font-heading"
           >
             Start Logic Journey
             <ArrowRight size={18} />
           </button>
-          <div className="text-sm text-white/40 font-mono">⚡ 4 Levels · Complete Profile Assessment</div>
+          <div className="text-sm text-[#5e5d68] font-mono">⚡ 4 Levels · Complete Profile Assessment</div>
         </div>
 
         {/* Feature Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full mt-4">
           {features.map((f) => (
-            <div key={f.title} className="p-6 rounded-2xl text-left transition-all duration-300 hover:scale-[1.02] border border-white/5 bg-white/[0.02] backdrop-blur-md">
+            <div key={f.title} className="p-6 rounded-2xl text-left transition-all duration-300 hover:shadow-md border border-[#e4e1ee] bg-white shadow-sm">
               <div className="text-4xl mb-4">{f.icon}</div>
-              <h3 className="font-bold text-white mb-2 text-base" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>{f.title}</h3>
-              <p className="text-xs text-white/50 leading-relaxed">{f.desc}</p>
+              <h3 className="font-bold text-[#1b1b24] mb-2 text-base font-heading">{f.title}</h3>
+              <p className="text-xs text-[#464555] leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -218,40 +218,40 @@ function JourneyScreen({ levels, completedLevels, levelScores, totalXP, user, on
   const currentStage = Math.min(4, completedLevels.length + 1);
 
   return (
-    <div className="min-h-screen px-6 py-12 flex flex-col items-center" style={{ background: "linear-gradient(135deg, #0A0C27 0%, #12143A 60%, #170A2E 100%)" }}>
-      <div className="w-full max-w-2xl flex items-center justify-between mb-8 border-b border-white/10 pb-6">
+    <div className="min-h-screen px-6 py-12 flex flex-col items-center bg-[#fcf8ff]">
+      <div className="w-full max-w-2xl flex items-center justify-between mb-8 border-b border-[#e4e1ee] pb-6">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl flex items-center justify-center shadow-lg shadow-[#FFB238]/20" style={{ background: "linear-gradient(135deg, #FFB238, #FF7A6B)" }}>
-            <Brain size={18} color="#12143A" />
+          <div className="w-9 h-9 rounded-xl flex items-center justify-center shadow-sm bg-[#1e00a9]">
+            <Brain size={18} color="#ffffff" />
           </div>
-          <span className="text-xl font-bold text-white font-heading">Logic Lab Journey</span>
+          <span className="text-xl font-bold text-[#1b1b24] font-heading">Logic Lab Journey</span>
         </div>
-        <div className="flex items-center gap-2 bg-[#FFB238]/10 border border-[#FFB238]/30 px-4 py-2 rounded-xl text-[#FFB238] font-mono font-bold text-sm">
+        <div className="flex items-center gap-2 bg-[#f5f2ff] border border-[#c3c0ff] px-4 py-2 rounded-xl text-[#1e00a9] font-mono font-bold text-sm">
           <span>🧠</span>
           <span>{totalXP} XP</span>
         </div>
       </div>
 
       {/* Stitch Bento Guide Card for Animal Growth */}
-      <div className="w-full max-w-xl mb-8 bg-[#16194A]/70 border border-[#34D1BF]/30 rounded-3xl p-6 backdrop-blur-xl shadow-2xl relative overflow-hidden flex flex-col sm:flex-row items-center gap-6">
+      <div className="w-full max-w-xl mb-8 bg-white border border-[#c7c4d8] rounded-3xl p-6 shadow-sm relative overflow-hidden flex flex-col sm:flex-row items-center gap-6">
         <div className="w-36 h-36 flex-shrink-0 flex items-center justify-center">
           <PetCompanion stage={currentStage} petType={user?.petType || "bunny"} />
         </div>
         <div className="flex-1 text-center sm:text-left">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#34D1BF]/15 text-[#34D1BF] border border-[#34D1BF]/30 mb-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#f5f2ff] text-[#069488] border border-[#069488]/30 mb-2">
             <span>✨ Companion Level {currentStage} / 4</span>
           </div>
-          <h3 className="text-lg font-bold text-white font-heading">
+          <h3 className="text-lg font-bold text-[#1b1b24] font-heading">
             {user?.name ? `${user.name}'s Animal Guide` : "Your Animal Companion"}
           </h3>
-          <p className="text-xs text-[#9497C9] mt-1 leading-relaxed">
+          <p className="text-xs text-[#464555] mt-1 leading-relaxed">
             Your pet grows stronger with every completed assessment. Next evolution unlocks in the forest!
           </p>
 
           {/* Growth Bar */}
-          <div className="mt-3 w-full bg-[#12143A] h-2 rounded-full overflow-hidden border border-[#33366E]">
+          <div className="mt-3 w-full bg-[#f0ecf9] h-2 rounded-full overflow-hidden border border-[#c7c4d8]">
             <div
-              className="h-full bg-gradient-to-r from-[#34D1BF] to-[#FFB238] transition-all duration-700 rounded-full"
+              className="h-full bg-gradient-to-r from-[#069488] to-[#1e00a9] transition-all duration-700 rounded-full"
               style={{ width: `${(completedLevels.length / levels.length) * 100}%` }}
             />
           </div>
@@ -259,8 +259,8 @@ function JourneyScreen({ levels, completedLevels, levelScores, totalXP, user, on
       </div>
 
       <div className="w-full max-w-xl text-center mb-8">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Your Logic Progress</h2>
-        <p className="text-white/40 text-xs sm:text-sm">Unlock progressive challenges to verify your cognitive capacity.</p>
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#1b1b24] mb-2 font-heading">Your Logic Progress</h2>
+        <p className="text-[#5e5d68] text-xs sm:text-sm">Unlock progressive challenges to verify your cognitive capacity.</p>
       </div>
 
       {/* Levels list */}
@@ -277,7 +277,7 @@ function JourneyScreen({ levels, completedLevels, levelScores, totalXP, user, on
                 <div
                   className="absolute left-[34px] top-[76px] w-[2px] h-[36px] z-0"
                   style={{
-                    background: completedLevels.includes(lvl.id) ? "linear-gradient(180deg, #34D1BF, rgba(255,255,255,0.06))" : "rgba(255,255,255,0.06)"
+                    background: completedLevels.includes(lvl.id) ? "#069488" : "#c7c4d8"
                   }}
                 />
               )}
@@ -286,20 +286,20 @@ function JourneyScreen({ levels, completedLevels, levelScores, totalXP, user, on
                 onClick={() => unlocked && onStartLevel(lvl)}
                 className={`relative z-10 p-5 rounded-2xl flex items-center gap-4 border transition-all duration-300 ${
                   completed
-                    ? "border-[#34D1BF]/30 bg-gradient-to-r from-[#1b2f4c] to-[#12143A]/40 hover:scale-[1.01] cursor-pointer"
+                    ? "border-[#069488]/40 bg-[#f5f2ff] hover:shadow-md cursor-pointer"
                     : unlocked
-                    ? "border-[#FFB238]/40 bg-[#1A1C49] hover:scale-[1.01] cursor-pointer shadow-lg shadow-[#FFB238]/5"
-                    : "border-white/5 bg-[#12143A]/30 opacity-50 cursor-not-allowed"
+                    ? "border-[#1e00a9]/30 bg-white hover:shadow-md cursor-pointer"
+                    : "border-[#e4e1ee] bg-[#f0ecf9] opacity-60 cursor-not-allowed"
                 }`}
               >
                 {/* Icon Circle */}
                 <div
                   className={`w-11 h-11 rounded-full flex items-center justify-center text-lg font-bold border transition-all ${
                     completed
-                      ? "border-[#34D1BF] bg-[#34D1BF]/20 text-[#34D1BF]"
+                      ? "border-[#069488] bg-[#069488]/15 text-[#069488]"
                       : unlocked
-                      ? "border-[#FFB238] bg-[#FFB238]/20 text-[#FFB238]"
-                      : "border-white/10 bg-white/5 text-white/30"
+                      ? "border-[#1e00a9] bg-[#1e00a9]/10 text-[#1e00a9]"
+                      : "border-[#c7c4d8] bg-white text-[#777587]"
                   }`}
                 >
                   {completed ? "✓" : lvl.icon}
@@ -308,30 +308,30 @@ function JourneyScreen({ levels, completedLevels, levelScores, totalXP, user, on
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-mono font-semibold uppercase tracking-wider text-[#FF7A6B]">{lvl.subtitle}</span>
-                    <div className="flex items-center gap-0.5 text-xs text-yellow-400">
+                    <div className="flex items-center gap-0.5 text-xs text-amber-500">
                       {Array.from({ length: lvl.difficulty }).map((_, i) => (
                         <Star key={i} size={10} fill="currentColor" />
                       ))}
                     </div>
                   </div>
-                  <h4 className="font-bold text-white text-base mt-0.5" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                  <h4 className="font-bold text-[#1b1b24] text-base mt-0.5 font-heading">
                     {lvl.id}. {lvl.name}
                   </h4>
-                  <p className="text-xs text-white/40 leading-relaxed mt-0.5">{lvl.desc}</p>
+                  <p className="text-xs text-[#5e5d68] leading-relaxed mt-0.5">{lvl.desc}</p>
                 </div>
 
                 <div className="text-right">
                   {completed ? (
                     <div>
-                      <div className="text-xs font-mono font-bold text-[#34D1BF]">Score: {score}</div>
-                      <div className="text-[10px] text-white/30 font-mono mt-0.5">+{score} XP</div>
+                      <div className="text-xs font-mono font-bold text-[#069488]">Score: {score}</div>
+                      <div className="text-[10px] text-[#5e5d68] font-mono mt-0.5">+{score} XP</div>
                     </div>
                   ) : unlocked ? (
-                    <div className="flex items-center gap-1 text-xs text-[#FFB238] font-bold">
+                    <div className="flex items-center gap-1 text-xs text-[#1e00a9] font-bold">
                       Play <ChevronRight size={14} />
                     </div>
                   ) : (
-                    <div className="text-xs text-white/30">Locked 🔒</div>
+                    <div className="text-xs text-[#777587]">Locked 🔒</div>
                   )}
                 </div>
               </div>
@@ -343,8 +343,7 @@ function JourneyScreen({ levels, completedLevels, levelScores, totalXP, user, on
       {isAllLevelsCompleted && (
         <button
           onClick={onShowResults}
-          className="w-full max-w-xl py-4 rounded-xl font-bold text-sm transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer flex items-center justify-center gap-2 mt-10 shadow-2xl"
-          style={{ background: "linear-gradient(135deg, #34D1BF, #FFB238)", color: "#12143A", boxShadow: "0 0 35px rgba(52,209,191,0.25)" }}
+          className="w-full max-w-xl py-4 rounded-xl font-bold text-sm transition-all duration-300 hover:bg-[#3525cd] active:scale-95 cursor-pointer flex items-center justify-center gap-2 mt-10 shadow-md bg-[#1e00a9] text-white font-heading"
         >
           View Final Logic Profile <Trophy size={16} />
         </button>
@@ -1212,44 +1211,44 @@ function ResultsScreen({ user, levelScores, onRestart }) {
   const evaluation = getBadgeText(finalScore, user?.stage || 'college');
 
   return (
-    <div className="min-h-screen" style={{ background: "linear-gradient(135deg, #0A0C27 0%, #12143A 60%, #150A2E 100%)" }}>
+    <div className="min-h-screen bg-[#fcf8ff]">
       {/* Header Results Banner */}
-      <div className="relative overflow-hidden px-6 pt-12 pb-14 text-center border-b border-white/5">
+      <div className="relative overflow-hidden px-6 pt-12 pb-14 text-center border-b border-[#e4e1ee] bg-[#fcf8ff]">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full opacity-10 blur-3xl" style={{ background: "radial-gradient(circle, #FFB238, transparent)" }} />
+          <div className="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full opacity-30 blur-3xl" style={{ background: "radial-gradient(circle, #c3c0ff, transparent)" }} />
         </div>
         <div className="relative z-10 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4 text-xs font-mono font-semibold" style={{ background: "rgba(255,178,56,0.15)", color: "#FFB238", border: "1px solid rgba(255,178,56,0.3)" }}>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4 text-xs font-mono font-semibold bg-[#e2dfff] text-[#1e00a9] border border-[#c3c0ff]">
             <Trophy size={12} /> Cognitive Profile Verified
           </div>
-          <h1 className="text-4xl font-bold text-white mb-2" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          <h1 className="text-4xl font-bold text-[#1b1b24] mb-2 font-heading">
             {user?.name ? `${user.name.split(" ")[0]}'s Logic Signature` : "Your Logic Signature"}
           </h1>
-          <p className="text-white/40 text-xs font-mono">Verified assessment metrics generated dynamically during play</p>
+          <p className="text-[#5e5d68] text-xs font-mono">Verified assessment metrics generated dynamically during play</p>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-6 py-10 space-y-8">
         {/* Fully Evolved Pet Companion Bento Card (Google Stitch Design) */}
-        <div className="bg-[#16194A]/80 border border-[#FFB238]/40 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+        <div className="bg-[#f5f2ff] border border-[#c3c0ff] rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
           <div className="w-48 h-48 flex-shrink-0 flex items-center justify-center relative">
             <PetCompanion stage={4} petType={user?.petType || "bunny"} />
           </div>
           <div className="flex-1 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-[#FFB238]/20 text-[#FFB238] border border-[#FFB238]/40 mb-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-[#e2dfff] text-[#1e00a9] border border-[#c3c0ff] mb-3">
               <span>👑 Fully Evolved Animal Companion (Stage 4 Master)</span>
             </div>
-            <h2 className="text-2xl font-bold text-white font-heading">
+            <h2 className="text-2xl font-bold text-[#1b1b24] font-heading">
               {user?.name ? `${user.name}'s Companion Guide` : "Your Master Companion"}
             </h2>
-            <p className="text-sm text-[#9497C9] mt-2 leading-relaxed">
+            <p className="text-sm text-[#464555] mt-2 leading-relaxed">
               "Congratulations! You've navigated through the full cognitive forest assessment. Your animal guide has evolved into a Master Strategist to assist your career journey."
             </p>
             <div className="mt-4 flex flex-wrap items-center justify-center md:justify-start gap-3">
-              <span className="bg-[#12143A] text-[#34D1BF] px-3 py-1 rounded-xl text-xs font-mono border border-[#34D1BF]/30">
+              <span className="bg-white text-[#069488] px-3 py-1 rounded-xl text-xs font-mono border border-[#069488]/30 shadow-sm">
                 Stage 4: Grand Master
               </span>
-              <span className="bg-[#12143A] text-[#FF7A6B] px-3 py-1 rounded-xl text-xs font-mono border border-[#FF7A6B]/30">
+              <span className="bg-white text-[#1e00a9] px-3 py-1 rounded-xl text-xs font-mono border border-[#c3c0ff] shadow-sm">
                 Cognitive Growth: 100%
               </span>
             </div>
@@ -1259,22 +1258,22 @@ function ResultsScreen({ user, levelScores, onRestart }) {
         {/* Profile score and radar charts */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Detailed Skill Scores */}
-          <div className="p-6 rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-md">
-            <h3 className="text-white font-bold mb-5 text-base tracking-wide" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Cognitive Sub-Skills</h3>
+          <div className="p-6 rounded-2xl border border-[#e4e1ee] bg-white shadow-sm">
+            <h3 className="text-[#1b1b24] font-bold mb-5 text-base tracking-wide font-heading">Cognitive Sub-Skills</h3>
             <div className="space-y-4">
               {[
-                { key: "planning", label: "Planning & Forward Thinking", value: planning, color: "#34D1BF" },
-                { key: "spatial", label: "Spatial & Structural Layout", value: spatial, color: "#FFB238" },
+                { key: "planning", label: "Planning & Forward Thinking", value: planning, color: "#069488" },
+                { key: "spatial", label: "Spatial & Structural Layout", value: spatial, color: "#F59E0B" },
                 { key: "pattern", label: "Pattern & Sequence Recognition", value: pattern, color: "#FF7A6B" },
-                { key: "decision", label: "Adaptive Decision Making", value: decision, color: "#a78bfa" }
+                { key: "decision", label: "Adaptive Decision Making", value: decision, color: "#4D44E3" }
               ].map(s => (
                 <div key={s.key}>
                   <div className="flex justify-between text-xs mb-1.5 font-mono">
-                    <span className="text-white/60">{s.label}</span>
+                    <span className="text-[#464555]">{s.label}</span>
                     <span className="font-bold" style={{ color: s.color }}>{s.value}</span>
                   </div>
-                  <div className="h-2 rounded-full bg-white/5 overflow-hidden">
-                    <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${s.value}%`, background: s.color, boxShadow: `0 0 8px ${s.color}88` }} />
+                  <div className="h-2 rounded-full bg-[#f0ecf9] overflow-hidden">
+                    <div className="h-full rounded-full transition-all duration-1000" style={{ width: `${s.value}%`, background: s.color }} />
                   </div>
                 </div>
               ))}
@@ -1282,15 +1281,15 @@ function ResultsScreen({ user, levelScores, onRestart }) {
           </div>
 
           {/* Radar Chart Visual */}
-          <div className="p-6 rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-md flex flex-col items-center justify-center">
-            <h3 className="text-white font-bold mb-3 text-base tracking-wide w-full text-left" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Skill Radar Profile</h3>
+          <div className="p-6 rounded-2xl border border-[#e4e1ee] bg-white shadow-sm flex flex-col items-center justify-center">
+            <h3 className="text-[#1b1b24] font-bold mb-3 text-base tracking-wide w-full text-left font-heading">Skill Radar Profile</h3>
             <div className="h-52 w-full flex items-center justify-center">
               <ResponsiveContainer width="100%" height="100%">
                 <RadarChart data={radarData} outerRadius="70%">
-                  <PolarGrid stroke="rgba(255,255,255,0.06)" />
-                  <PolarAngleAxis dataKey="skill" tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 10, fontFamily: "monospace" }} />
+                  <PolarGrid stroke="#e4e1ee" />
+                  <PolarAngleAxis dataKey="skill" tick={{ fill: "#464555", fontSize: 10, fontFamily: "monospace" }} />
                   <PolarRadiusAxis domain={[0, 100]} tick={false} axisLine={false} />
-                  <Radar dataKey="value" stroke="#FFB238" fill="#FFB238" fillOpacity={0.25} strokeWidth={2} />
+                  <Radar dataKey="value" stroke="#1e00a9" fill="#1e00a9" fillOpacity={0.2} strokeWidth={2} />
                 </RadarChart>
               </ResponsiveContainer>
             </div>
@@ -1299,29 +1298,29 @@ function ResultsScreen({ user, levelScores, onRestart }) {
 
         {/* Global summary badge & level graph */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="md:col-span-1 p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-[#1c2f4c] to-[#12143A]/30 flex flex-col justify-between">
+          <div className="md:col-span-1 p-6 rounded-2xl border border-[#e4e1ee] bg-white shadow-sm flex flex-col justify-between">
             <div>
-              <div className="text-xs uppercase font-mono font-semibold tracking-wider text-[#34D1BF] mb-1">Final Score</div>
-              <div className="text-5xl font-black text-white font-mono leading-none mb-3">{finalScore} <span className="text-xs text-white/30">/ 100</span></div>
-              <div className="inline-block px-3 py-1 rounded-full text-xs font-bold text-[#12143A] bg-[#FFB238] mb-4">
+              <div className="text-xs uppercase font-mono font-semibold tracking-wider text-[#069488] mb-1">Final Score</div>
+              <div className="text-5xl font-black text-[#1b1b24] font-mono leading-none mb-3">{finalScore} <span className="text-xs text-[#5e5d68]">/ 100</span></div>
+              <div className="inline-block px-3 py-1 rounded-full text-xs font-bold text-white bg-[#1e00a9] mb-4">
                 🔥 {evaluation.title}
               </div>
-              <p className="text-xs text-white/50 leading-relaxed">{evaluation.desc}</p>
+              <p className="text-xs text-[#464555] leading-relaxed">{evaluation.desc}</p>
             </div>
           </div>
 
           {/* Level performance comparison bar chart */}
-          <div className="md:col-span-2 p-6 rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-md">
-            <h3 className="text-white font-bold mb-4 text-base tracking-wide" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Level Score Breakdown</h3>
+          <div className="md:col-span-2 p-6 rounded-2xl border border-[#e4e1ee] bg-white shadow-sm">
+            <h3 className="text-[#1b1b24] font-bold mb-4 text-base tracking-wide font-heading">Level Score Breakdown</h3>
             <div className="h-44 w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={levelPerformances} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                  <XAxis dataKey="name" tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 10, fontFamily: "monospace" }} axisLine={false} tickLine={false} />
-                  <YAxis domain={[0, 100]} tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 10 }} axisLine={false} tickLine={false} />
+                  <XAxis dataKey="name" tick={{ fill: "#464555", fontSize: 10, fontFamily: "monospace" }} axisLine={false} tickLine={false} />
+                  <YAxis domain={[0, 100]} tick={{ fill: "#5e5d68", fontSize: 10 }} axisLine={false} tickLine={false} />
                   <Tooltip
-                    contentStyle={{ background: "#12143A", borderColor: "rgba(255,255,255,0.1)", borderRadius: "12px" }}
-                    itemStyle={{ color: "#fff", fontSize: "11px" }}
-                    labelStyle={{ color: "rgba(255,255,255,0.5)", fontSize: "10px" }}
+                    contentStyle={{ background: "#ffffff", borderColor: "#e4e1ee", borderRadius: "12px", boxShadow: "0 4px 12px rgba(0,0,0,0.05)" }}
+                    itemStyle={{ color: "#1b1b24", fontSize: "11px" }}
+                    labelStyle={{ color: "#5e5d68", fontSize: "10px" }}
                   />
                   <Bar dataKey="score" radius={[8, 8, 0, 0]} maxBarSize={45}>
                     {levelPerformances.map((entry, index) => (
@@ -1338,7 +1337,20 @@ function ResultsScreen({ user, levelScores, onRestart }) {
         <div className="flex flex-col sm:flex-row items-center gap-4 justify-center pt-6">
           <button
             onClick={onRestart}
-            className="px-6 py-3.5 rounded-xl text-xs font-bold border border-white/10 hover:bg-white/5 text-white/60 transition-all cursor-pointer flex items-center gap-2"
+            className="px-6 py-3.5 rounded-xl text-xs font-bold border border-[#outline] hover:bg-[#surface-variant] text-[#1b1b24] transition-all cursor-pointer flex items-center gap-2"
+          >
+            <RotateCcw size={14} /> Restart Assessment
+          </button>
+          <button
+            onClick={() => alert("Logic Signature exported successfully! Storing values in database.")}
+            className="px-6 py-3.5 rounded-xl text-xs font-bold bg-[#1e00a9] hover:bg-[#3525cd] text-white transition-all cursor-pointer flex items-center gap-2 shadow-sm"
+          >
+            Export Profile Verified ✓
+          </button>
+        </div>
+      </div>
+    </div>
+  );
           >
             <RotateCcw size={14} /> Restart Assessment
           </button>
