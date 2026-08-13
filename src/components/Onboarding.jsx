@@ -97,6 +97,8 @@ export default function Onboarding({ onComplete }) {
                 : 'text-[#9497C9] hover:text-[#F5F3ED]'
             }`}
           >
+            <GraduationCap className="w-4 h-4" /> College
+          </button>
         </div>
 
         {/* Pet Companion Selection */}
