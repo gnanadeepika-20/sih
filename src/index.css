@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #0D0F2E;
+  --surface: #1B1E52;
+  --surface-light: #242868;
+  --amber: #FFB238;
+  --teal: #34D1BF;
+  --coral: #FF7A6B;
+  --text: #F5F3ED;
+  --muted: #9497C9;
+  --line: #33366E;
+  --glow-amber: rgba(255, 178, 56, 0.25);
+  --glow-teal: rgba(52, 209, 191, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.25); }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255,178,56,0.4); }
+  50% { box-shadow: 0 0 40px rgba(255,178,56,0.7), 0 0 60px rgba(255,178,56,0.3); }
+}
+@keyframes shimmer {
+  from { background-position: 200% center; }
+  to { background-position: -200% center; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 0.5; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.animate-fade-in { animation: fadeIn 0.45s ease-out forwards; }
+.animate-scale-in { animation: scaleIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-glow { animation: glow 2s ease-in-out infinite; }
+.animate-slide-up { animation: slideUp 0.4s ease-out forwards; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, #FFB238, #FF7A6B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-text-teal {
+  background: linear-gradient(90deg, #34D1BF, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer loading effect */
+.shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+  background-size: 400% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Glow utilities */
+.glow-amber { box-shadow: 0 0 30px rgba(255,178,56,0.35); }
+.glow-teal { box-shadow: 0 0 30px rgba(52,209,191,0.35); }
+.glow-coral { box-shadow: 0 0 30px rgba(255,122,107,0.35); }
+
+/* Tile highlight */
+.tile-active {
+  box-shadow: 0 0 15px rgba(52,209,191,0.6);
+  transform: scale(1.05);
+}
+
+/* Game grid */
+.game-grid {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 12px;
+}
+
+/* Button press effect */
+button:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+/* Selection suppression in games */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Frosted glass */
+.glass {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.09);
+}
+
+/* Progress bar fill animation */
+@keyframes fillBar {
+  from { width: 0%; }
+  to { width: var(--target-width); }
+}
+.bar-fill {
+  animation: fillBar 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
