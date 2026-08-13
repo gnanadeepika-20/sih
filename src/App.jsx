@@ -1337,26 +1337,13 @@ function ResultsScreen({ user, levelScores, onRestart }) {
         <div className="flex flex-col sm:flex-row items-center gap-4 justify-center pt-6">
           <button
             onClick={onRestart}
-            className="px-6 py-3.5 rounded-xl text-xs font-bold border border-[#outline] hover:bg-[#surface-variant] text-[#1b1b24] transition-all cursor-pointer flex items-center gap-2"
+            className="px-6 py-3.5 rounded-xl text-xs font-bold border border-[#777587] hover:bg-[#e4e1ee] text-[#1b1b24] transition-all cursor-pointer flex items-center gap-2"
           >
             <RotateCcw size={14} /> Restart Assessment
           </button>
           <button
             onClick={() => alert("Logic Signature exported successfully! Storing values in database.")}
             className="px-6 py-3.5 rounded-xl text-xs font-bold bg-[#1e00a9] hover:bg-[#3525cd] text-white transition-all cursor-pointer flex items-center gap-2 shadow-sm"
-          >
-            Export Profile Verified ✓
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-          >
-            <RotateCcw size={14} /> Restart Assessment
-          </button>
-          <button
-            onClick={() => alert("Logic Signature exported successfully! Storing values in database.")}
-            className="px-6 py-3.5 rounded-xl text-xs font-bold bg-[#34D1BF] hover:bg-[#34D1BF]/90 text-[#12143A] transition-all cursor-pointer flex items-center gap-2"
           >
             Export Profile Verified ✓
           </button>
@@ -1420,7 +1407,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen text-white select-none overflow-x-hidden" style={{ backgroundColor: "#0A0C27" }}>
+    <div className="min-h-screen text-[#1b1b24] select-none overflow-x-hidden bg-[#fcf8ff]">
       {screen === "hero" && (
         <HeroScreen onStart={() => setScreen("onboarding")} />
       )}
