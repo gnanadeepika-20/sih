@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillQuest - Crate Runner Assessment</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#3b0900",
+                    "surface-variant": "#e4e1ee",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#892200",
+                    "surface-container": "#f0ecf9",
+                    "inverse-surface": "#302f39",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#e4e1ee",
+                    "surface-container-highest": "#e4e1ee",
+                    "on-error": "#ffffff",
+                    "outline": "#777587",
+                    "inverse-primary": "#c3c0ff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#621500",
+                    "on-primary-fixed": "#0f0069",
+                    "on-background": "#1b1b24",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#4d44e3",
+                    "on-tertiary-container": "#ff9e82",
+                    "surface-container-low": "#f5f2ff",
+                    "primary-container": "#3525cd",
+                    "surface-bright": "#fcf8ff",
+                    "on-primary-container": "#b1afff",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-secondary-container": "#64636e",
+                    "secondary": "#5e5d68",
+                    "on-primary-fixed-variant": "#3323cc",
+                    "primary-fixed": "#e2dfff",
+                    "background": "#fcf8ff",
+                    "tertiary-fixed-dim": "#ffb5a0",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#1b1b24",
+                    "inverse-on-surface": "#f3effc",
+                    "on-surface-variant": "#464555",
+                    "tertiary-fixed": "#ffdbd1",
+                    "error": "#ba1a1a",
+                    "surface": "#fcf8ff",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#c7c5d1",
+                    "primary": "#1e00a9",
+                    "surface-dim": "#dcd8e5",
+                    "surface-warm": "#fcfbf9",
+                    "surface-container-high": "#eae6f4",
+                    "on-secondary-fixed-variant": "#464650",
+                    "logic-indigo": "#4d44e3",
+                    "on-tertiary-fixed-variant": "#872100",
+                    "outline-variant": "#c7c4d8",
+                    "secondary-container": "#e4e1ee",
+                    "on-secondary-fixed": "#1b1b24",
+                    "comm-rose": "#8b5cf6",
+                    "solving-emerald": "#069488",
+                    "design-amber": "#f59e0b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-hero-mobile": ["Epilogue"],
+                    "display-hero": ["Epilogue"],
+                    "headline-lg": ["Epilogue"],
+                    "headline-lg-mobile": ["Epilogue"],
+                    "label-caps": ["Inter"],
+                    "title-md": ["Epilogue"],
+                    "body-lg": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "display-hero-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-hero": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["42px", {"lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-caps": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "title-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-sm": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 4px;
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+        }
+        
+        .game-cell {
+            background-color: #f5f2ff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+        
+        .wall { background-color: #dcd8e5; }
+        .target { 
+            border: 2px dashed #4d44e3; 
+            background-color: rgba(77, 68, 227, 0.1); 
+        }
+        .crate {
+            background-color: #f59e0b;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 2px solid #b45309;
+            border-radius: 4px;
+            width: 80%;
+            height: 80%;
+        }
+        .player {
+            width: 70%;
+            height: 70%;
+            background-color: #1e00a9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+        
+        .sunk-state {
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface-warm text-on-surface min-h-screen font-body-lg flex flex-col">
+<!-- Assessment Navigation Header (Suppressed main nav as per rules for transactional/task flow) -->
+<header class="w-full bg-surface-container-lowest border-b border-surface-variant z-50">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="font-title-md text-title-md font-bold text-primary">SkillQuest</div>
+</div>
+<div class="flex flex-col items-end">
+<div class="font-label-caps text-label-caps text-logic-indigo uppercase tracking-wider">Logic Dimension</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Challenge 3 of 8</div>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-1 bg-surface-variant">
+<div class="h-full bg-logic-indigo w-3/8 transition-all duration-500" style="width: 37.5%"></div>
+</div>
+</header>
+<!-- Main Game Area -->
+<main class="flex-grow flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop w-full max-w-container-max mx-auto">
+<div class="w-full max-w-3xl flex flex-col md:flex-row gap-gutter bg-surface-container-lowest rounded-2xl shadow-sm border border-surface-variant p-6 md:p-10">
+<!-- Instructions Panel -->
+<div class="w-full md:w-1/3 flex flex-col gap-6">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Crate Runner</h1>
+<p class="text-on-surface-variant">Push the crate to the designated target area. You can only push, never pull.</p>
+</div>
+<div class="bg-surface-container rounded-lg p-4 flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">MOVES</span>
+<span class="font-title-md text-title-md font-bold text-logic-indigo">14</span>
+</div>
+<div class="mt-auto flex flex-col gap-3">
+<button class="w-full py-3 px-4 rounded-xl border border-outline text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center gap-2 font-body-sm font-semibold">
+<span class="material-symbols-outlined text-[20px]">undo</span>
+                        Undo Move
+                    </button>
+<button class="w-full py-3 px-4 rounded-xl border border-outline text-on-surface hover:bg-surface-container transition-colors flex items-center justify-center gap-2 font-body-sm font-semibold">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+                        Reset Level
+                    </button>
+</div>
+</div>
+<!-- Game Board Area -->
+<div class="w-full md:w-2/3 flex items-center justify-center bg-surface-container-high rounded-[24px] p-8 sunk-state">
+<div class="game-grid">
+<!-- Row 1 -->
+<div class="game-cell wall"></div>
+<div class="game-cell wall"></div>
+<div class="game-cell wall"></div>
+<div class="game-cell wall"></div>
+<div class="game-cell wall"></div>
+<!-- Row 2 -->
+<div class="game-cell wall"></div>
+<div class="game-cell"></div>
+<div class="game-cell target"></div>
+<div class="game-cell"></div>
+<div class="game-cell wall"></div>
+<!-- Row 3 -->
+<div class="game-cell wall"></div>
+<div class="game-cell"></div>
+<div class="game-cell">
+<div class="crate"></div>
+</div>
+<div class="game-cell"></div>
+<div class="game-cell wall"></div>
+<!-- Row 4 -->
+<div class="game-cell wall"></div>
+<div class="game-cell"></div>
+<div class="game-cell">
+<div class="player">
+<span class="material-symbols-outlined text-[20px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">face</span>
+</div>
+</div>
+<div class="game-cell"></div>
+<div class="game-cell wall"></div>
+<!-- Row 5 -->
+<div class="game-cell wall"></div>
+<div class="game-cell wall"></div>
+<div class="game-cell wall"></div>
+<div class="game-cell wall"></div>
+<div class="game-cell wall"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Controls Hint (Mobile mostly) -->
+<div class="w-full py-4 flex justify-center text-on-surface-variant font-body-sm items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">keyboard</span>
+        Use arrow keys or swipe to move
+    </div>
+</body></html>

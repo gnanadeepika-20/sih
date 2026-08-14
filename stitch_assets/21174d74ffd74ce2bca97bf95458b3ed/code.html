@@ -1,0 +1,267 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Career Profile - Backend Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#1b1b24",
+                      "surface-container-low": "#f5f2ff",
+                      "on-error-container": "#93000a",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed": "#ffdbcc",
+                      "inverse-on-surface": "#f3effc",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#1b1b24",
+                      "on-secondary-fixed": "#1b1b1c",
+                      "tertiary-container": "#a44100",
+                      "on-secondary-fixed-variant": "#474647",
+                      "primary-container": "#4f46e5",
+                      "secondary-fixed-dim": "#c8c6c7",
+                      "surface-bright": "#fcf8ff",
+                      "tertiary-fixed-dim": "#ffb695",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#0f0069",
+                      "surface-container-highest": "#e4e1ee",
+                      "surface-container": "#f0ecf9",
+                      "inverse-primary": "#c3c0ff",
+                      "secondary": "#5f5e5f",
+                      "on-tertiary-container": "#ffd2be",
+                      "primary-fixed": "#e2dfff",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "background": "#fcf8ff",
+                      "outline-variant": "#c7c4d8",
+                      "outline": "#777587",
+                      "inverse-surface": "#302f39",
+                      "surface": "#fcf8ff",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed-variant": "#3323cc",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e4e1ee",
+                      "on-tertiary-fixed-variant": "#7b2f00",
+                      "surface-container-high": "#eae6f4",
+                      "on-primary-container": "#dad7ff",
+                      "on-surface-variant": "#464555",
+                      "surface-tint": "#4d44e3",
+                      "secondary-container": "#e2dfe0",
+                      "on-secondary-container": "#636263",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#3525cd",
+                      "surface-dim": "#dcd8e5",
+                      "on-tertiary-fixed": "#351000",
+                      "secondary-fixed": "#e5e2e3",
+                      "tertiary": "#7e3000"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "card": "24px",
+                      "button": "16px",
+                      "input": "16px",
+                      "game": "32px"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "container-max": "1200px",
+                      "unit": "8px",
+                      "section-gap": "120px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "title-sm": ["Inter"],
+                      "label-caps": ["Inter"],
+                      "headline-md-mobile": ["Inter"],
+                      "hero-lg-mobile": ["Inter"],
+                      "hero-lg": ["Inter"],
+                      "headline-md": ["Inter"]
+              },
+              "fontSize": {
+                      "body-sm": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "title-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-caps": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "hero-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "hero-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-md": ["42px", {"lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .symbol-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-sm min-h-screen flex flex-col antialiased">
+<!-- Header / Top Navigation -->
+<header class="bg-surface-container-low dark:bg-surface-container-lowest text-primary dark:text-inverse-primary font-label-caps text-label-caps docked full-width top-0 border-b border-surface-variant/50 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16">
+<div class="font-title-sm text-title-sm font-black text-primary dark:text-inverse-primary">
+                SkillQuest
+            </div>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:opacity-70 transition-opacity flex items-center justify-center p-2 rounded-full hover:bg-surface-variant/50">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-section-gap flex flex-col gap-16">
+<!-- Hero Section -->
+<section class="flex flex-col md:flex-row gap-8 items-start md:items-center justify-between">
+<div class="flex flex-col gap-4 max-w-2xl">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 bg-primary text-on-primary rounded-full w-fit shadow-sm">
+<span class="material-symbols-outlined text-sm symbol-filled" data-icon="verified">verified</span>
+<span class="font-label-caps text-xs uppercase tracking-wider">94% Match</span>
+</div>
+<h1 class="font-hero-lg-mobile md:font-hero-lg text-on-surface">Backend Developer</h1>
+<p class="font-body-lg text-on-surface-variant max-w-xl">
+                    You have a strong affinity for logic and systems. A career in backend development allows you to architect the invisible engines that power the digital world, solving complex puzzles every day.
+                </p>
+</div>
+</section>
+<!-- Cognitive Fit Visualization -->
+<section class="bg-surface-container-lowest rounded-game p-8 md:p-12 relative overflow-hidden border border-outline-variant/50 shadow-md">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="flex-grow w-full">
+<h2 class="font-title-sm text-on-surface mb-8">Cognitive Fit Analysis</h2>
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-on-surface-variant">Logic</span>
+<span class="font-label-caps text-primary font-bold">92%</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[92%] transition-all duration-1000"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-on-surface-variant">Problem Solving</span>
+<span class="font-label-caps text-primary font-bold">89%</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[89%] transition-all duration-1000"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-on-surface-variant">Communication</span>
+<span class="font-label-caps text-secondary font-bold">74%</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full w-[74%] transition-all duration-1000"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-on-surface-variant">Design</span>
+<span class="font-label-caps text-secondary font-bold">61%</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full w-[61%] transition-all duration-1000"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-shrink-0">
+<div class="w-64 h-64 rounded-full border-8 border-primary/10 relative flex items-center justify-center bg-surface shadow-inner">
+<div class="absolute inset-0 rounded-full border-8 border-primary border-t-transparent -rotate-45"></div>
+<div class="text-center">
+<span class="font-hero-lg text-primary block leading-none">94</span>
+<span class="font-label-caps text-on-surface-variant uppercase tracking-tighter">Overall Match</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why this fits you -->
+<section class="flex flex-col gap-8">
+<h2 class="font-headline-md-mobile md:font-headline-md text-on-surface">Why this fits you</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="bg-surface border border-outline-variant/50 rounded-card p-8 hover:border-primary/50 transition-all duration-300">
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-2xl symbol-filled">account_tree</span>
+</div>
+<h3 class="font-title-sm text-on-surface mb-3">Strong logical reasoning</h3>
+<p class="font-body-sm text-on-surface-variant leading-relaxed">
+Your assessment shows a natural ability to break down complex problems into step-by-step logical sequences. This is the core skill required for designing robust backend algorithms and data flows.
+</p>
+</div>
+<div class="bg-surface border border-outline-variant/50 rounded-card p-8 hover:border-tertiary/50 transition-all duration-300">
+<div class="w-12 h-12 bg-tertiary/10 text-tertiary rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-2xl symbol-filled">settings_b_roll</span>
+</div>
+<h3 class="font-title-sm text-on-surface mb-3">System-oriented thinking</h3>
+<p class="font-body-sm text-on-surface-variant leading-relaxed">
+You excel at understanding how different parts of a system interact. Backend developers must constantly consider how databases, servers, and APIs communicate efficiently and securely.
+</p>
+</div></div>
+</section>
+<!-- What You'll Work With -->
+<section class="flex flex-col gap-8">
+<h2 class="font-headline-md-mobile md:font-headline-md text-on-surface">What You'll Work With</h2>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4"><div class="flex flex-col items-center justify-center p-10 bg-surface-container-low border border-outline-variant/30 rounded-card gap-4 hover:bg-surface transition-colors">
+<div class="w-16 h-16 flex items-center justify-center">
+<img alt="Python Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKxGw-oyqllKkZ5ltHWRNm6DnBDOPr-LgERi3BU2rcCNL6dAfBZesgeZiiowOuTwFOWml9T8VFe5Xda2YPE4dHei78gvooF2a0l2uJCvYej_q-mYWEcWDUgEU3BSVHC38m8-8V--d2B8vZrp4L3KtaW5_NU3LPqZKWLYhAZXLbfFgjCDIt8YLZ06quc3PS6xGFim2O_D8Fip69srytbutFylcwbvFW8ndT1f-f4KA9ipTIUfc4tDFr">
+</div>
+<span class="font-label-caps text-on-surface font-bold">Python</span>
+</div>
+<div class="flex flex-col items-center justify-center p-10 bg-surface-container-low border border-outline-variant/30 rounded-card gap-4 hover:bg-surface transition-colors">
+<div class="w-16 h-16 bg-surface-container-highest rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="api">api</span>
+</div>
+<span class="font-label-caps text-on-surface font-bold">APIs</span>
+</div>
+<div class="flex flex-col items-center justify-center p-10 bg-surface-container-low border border-outline-variant/30 rounded-card gap-4 hover:bg-surface transition-colors">
+<div class="w-16 h-16 bg-surface-container-highest rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="database">database</span>
+</div>
+<span class="font-label-caps text-on-surface font-bold">Databases</span>
+</div></div>
+</section>
+<!-- CTA Section -->
+<section class="mt-8 mb-12 flex justify-center">
+<button class="bg-primary text-on-primary font-label-caps text-label-caps rounded-button px-8 py-4 flex items-center gap-2 hover:bg-primary/90 transition-colors shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 duration-200 w-full md:w-fit px-12 py-5 text-lg">
+                View My 6-Month Roadmap
+                <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-high text-primary dark:text-inverse-primary font-body-sm text-body-sm full-width mt-auto border-t border-outline-variant/20">
+<div class="max-w-container-max mx-auto px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center w-full gap-6">
+<div class="font-title-sm text-title-sm font-bold text-primary dark:text-inverse-primary">
+                SkillQuest
+            </div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors" href="#">Terms</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors" href="#">Twitter</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+</nav>
+<div class="text-on-surface-variant dark:text-on-surface-variant text-sm">
+                © 2024 SkillQuest Education
+            </div>
+</div>
+</footer>
+
+
+</body></html>

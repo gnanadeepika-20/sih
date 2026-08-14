@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Personalized Learning Roadmap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1b1b24",
+                        "surface-container-low": "#f5f2ff",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "inverse-on-surface": "#f3effc",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1b24",
+                        "on-secondary-fixed": "#1b1b1c",
+                        "tertiary-container": "#a44100",
+                        "on-secondary-fixed-variant": "#474647",
+                        "primary-container": "#4f46e5",
+                        "secondary-fixed-dim": "#c8c6c7",
+                        "surface-bright": "#fcf8ff",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-highest": "#e4e1ee",
+                        "surface-container": "#f0ecf9",
+                        "inverse-primary": "#c3c0ff",
+                        "secondary": "#5f5e5f",
+                        "on-tertiary-container": "#ffd2be",
+                        "primary-fixed": "#e2dfff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "background": "#fcf8ff",
+                        "outline-variant": "#c7c4d8",
+                        "outline": "#777587",
+                        "inverse-surface": "#302f39",
+                        "surface": "#fcf8ff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e4e1ee",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "surface-container-high": "#eae6f4",
+                        "on-primary-container": "#dad7ff",
+                        "on-surface-variant": "#464555",
+                        "surface-tint": "#4d44e3",
+                        "secondary-container": "#e2dfe0",
+                        "on-secondary-container": "#636263",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#3525cd",
+                        "surface-dim": "#dcd8e5",
+                        "on-tertiary-fixed": "#351000",
+                        "secondary-fixed": "#e5e2e3",
+                        "tertiary": "#7e3000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "container-max": "1200px",
+                        "unit": "8px",
+                        "section-gap": "120px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "title-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md-mobile": ["Inter"],
+                        "hero-lg-mobile": ["Inter"],
+                        "hero-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "title-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-caps": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "hero-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "hero-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["42px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-sm antialiased">
+<!-- TopNavBar Web -->
+<nav class="hidden md:flex bg-surface text-primary font-body-sm docked full-width top-0 w-full h-20">
+<div class="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center h-20 w-full">
+<div class="font-title-sm text-title-sm font-bold text-primary">SkillQuest</div>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="#">How it Works</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="#">Pricing</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-label-caps text-label-caps px-6 py-2 rounded-lg border border-outline text-on-surface hover:bg-surface-container transition-colors">Login</button>
+<button class="font-label-caps text-label-caps bg-primary text-on-primary px-6 py-2 rounded-lg hover:opacity-90 transition-opacity">Start Assessment</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap flex flex-col gap-12">
+<!-- Header -->
+<header class="text-center max-w-3xl mx-auto flex flex-col gap-4">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Personalized Roadmap</span>
+<h1 class="font-headline-md-mobile md:font-headline-md text-headline-md-mobile md:text-headline-md text-on-background">6-Month Backend Developer Path</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Master the fundamentals of server-side architecture, databases, and API design. Built tailored to your current experience level.</p>
+</header>
+<!-- Path Layout -->
+<div class="relative flex flex-col gap-8 md:gap-0 pl-4 md:pl-0 mt-8">
+<!-- Vertical Line (Desktop) -->
+<div class="hidden md:block absolute left-8 top-8 bottom-8 w-1 bg-surface-container rounded-full z-0"></div>
+<!-- Month 1: Expanded Node -->
+<div class="relative z-10 flex flex-col md:flex-row gap-8 mb-16">
+<!-- Node Marker -->
+<div class="hidden md:flex flex-col items-center gap-2 w-16 pt-2">
+<div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-title-sm text-title-sm shadow-md">1</div>
+<div class="w-1 h-full bg-primary rounded-full"></div>
+</div>
+<!-- Expanded Content Card -->
+<div class="flex-1 bg-surface-container-lowest border border-outline-variant rounded-[24px] p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+<div class="flex flex-col md:flex-row justify-between items-start gap-4 mb-6">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="md:hidden w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm">1</span>
+<span class="font-label-caps text-label-caps bg-surface-container px-3 py-1 rounded-full text-on-surface-variant">Month 1</span>
+<span class="font-label-caps text-label-caps text-primary bg-primary-fixed px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">fiber_manual_record</span>
+                                    In Progress
+                                </span>
+</div>
+<h2 class="font-title-sm text-title-sm text-on-background">Programming Foundations</h2>
+</div>
+<div class="flex gap-4 text-on-surface-variant bg-surface-container px-4 py-2 rounded-xl">
+<div class="flex flex-col items-center">
+<span class="font-bold text-primary">3</span>
+<span class="text-[12px] uppercase tracking-wider">Skills</span>
+</div>
+<div class="w-[1px] bg-outline-variant"></div>
+<div class="flex flex-col items-center">
+<span class="font-bold text-primary">2</span>
+<span class="text-[12px] uppercase tracking-wider">Projects</span>
+</div>
+<div class="w-[1px] bg-outline-variant"></div>
+<div class="flex flex-col items-center">
+<span class="font-bold text-primary">12h</span>
+<span class="text-[12px] uppercase tracking-wider">Time</span>
+</div>
+</div>
+</div>
+<!-- Progress -->
+<div class="mb-8">
+<div class="flex justify-between text-sm mb-2 font-label-caps text-label-caps text-on-surface-variant">
+<span>Progress</span>
+<span>25%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/4 rounded-full"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Learn -->
+<div class="flex flex-col gap-4 bg-surface rounded-xl p-5 border border-outline-variant/50">
+<h3 class="font-title-sm text-title-sm text-on-background flex items-center gap-2 border-b border-outline-variant pb-2">
+<span class="material-symbols-outlined text-primary">menu_book</span> Learn
+                            </h3>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<p class="font-bold text-on-surface">Data Structures &amp; Algorithms</p>
+<p class="text-sm text-on-surface-variant">Arrays, Linked Lists, Trees</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline mt-1">radio_button_unchecked</span>
+<div>
+<p class="font-bold text-on-surface">Memory Management</p>
+<p class="text-sm text-on-surface-variant">Heap vs Stack, Garbage Collection</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Practice -->
+<div class="flex flex-col gap-4 bg-surface rounded-xl p-5 border border-outline-variant/50">
+<h3 class="font-title-sm text-title-sm text-on-background flex items-center gap-2 border-b border-outline-variant pb-2">
+<span class="material-symbols-outlined text-tertiary-container">code</span> Practice
+                            </h3>
+<div class="bg-surface-container-low rounded-lg p-4 border border-outline-variant flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Algorithm Challenge</span>
+<span class="bg-surface-container px-2 py-1 rounded text-xs">Easy</span>
+</div>
+<p class="font-bold text-on-surface">Implement a Thread-Safe Queue</p>
+<button class="mt-2 w-full py-2 bg-on-surface text-on-primary rounded-lg text-sm font-bold hover:bg-on-surface/90 transition">Start Challenge</button>
+</div>
+</div>
+<!-- Build -->
+<div class="flex flex-col gap-4 bg-primary-fixed/20 rounded-xl p-5 border border-primary-fixed">
+<h3 class="font-title-sm text-title-sm text-on-background flex items-center gap-2 border-b border-primary/20 pb-2">
+<span class="material-symbols-outlined text-primary">build</span> Build
+                            </h3>
+<div class="flex flex-col gap-2 flex-1 justify-between">
+<div>
+<p class="font-bold text-on-surface mb-1">Command-Line Task Manager</p>
+<p class="text-sm text-on-surface-variant">Build a CLI tool using Python to manage tasks, utilizing local file storage (JSON/CSV) and basic argument parsing.</p>
+</div>
+<button class="mt-4 w-full py-3 bg-primary text-on-primary rounded-xl font-bold hover:bg-primary/90 transition shadow-sm">View Project Brief</button>
+</div>
+</div>
+</div>
+<!-- Resources -->
+<div class="mt-8 border-t border-outline-variant pt-6">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant mb-4">Recommended Resources</h4>
+<div class="flex flex-wrap gap-4">
+<a class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-full text-sm hover:bg-surface-container transition" href="#">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">play_circle</span>
+                                Intro to Python CLI (Video)
+                            </a>
+<a class="flex items-center gap-2 px-4 py-2 border border-outline-variant rounded-full text-sm hover:bg-surface-container transition" href="#">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">article</span>
+                                Python Argparse Docs
+                            </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Month 2: Collapsed Node -->
+<div class="relative z-10 flex flex-col md:flex-row gap-8 mb-12 opacity-80 hover:opacity-100 transition-opacity">
+<!-- Node Marker -->
+<div class="hidden md:flex flex-col items-center gap-2 w-16 pt-2">
+<div class="w-10 h-10 rounded-full bg-surface-container border-2 border-outline-variant text-on-surface-variant flex items-center justify-center font-bold text-sm">2</div>
+</div>
+<!-- Collapsed Card -->
+<div class="flex-1 bg-surface border border-outline-variant rounded-2xl p-6 flex flex-col md:flex-row justify-between items-center gap-4 cursor-pointer hover:border-primary transition-colors">
+<div class="flex items-center gap-4 w-full md:w-auto">
+<span class="md:hidden w-8 h-8 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant flex items-center justify-center font-bold text-sm">2</span>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Month 2</span>
+<h3 class="font-title-sm text-title-sm text-on-background">Relational Databases (SQL)</h3>
+</div>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+<span class="font-label-caps text-label-caps bg-surface-container px-3 py-1 rounded-full text-on-surface-variant flex items-center gap-1">
+                            Not Started
+                        </span>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Month 3: Collapsed Node -->
+<div class="relative z-10 flex flex-col md:flex-row gap-8 mb-12 opacity-80 hover:opacity-100 transition-opacity">
+<!-- Node Marker -->
+<div class="hidden md:flex flex-col items-center gap-2 w-16 pt-2">
+<div class="w-10 h-10 rounded-full bg-surface-container border-2 border-outline-variant text-on-surface-variant flex items-center justify-center font-bold text-sm">3</div>
+</div>
+<!-- Collapsed Card -->
+<div class="flex-1 bg-surface border border-outline-variant rounded-2xl p-6 flex flex-col md:flex-row justify-between items-center gap-4 cursor-pointer hover:border-primary transition-colors">
+<div class="flex items-center gap-4 w-full md:w-auto">
+<span class="md:hidden w-8 h-8 rounded-full bg-surface-container border border-outline-variant text-on-surface-variant flex items-center justify-center font-bold text-sm">3</span>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Month 3</span>
+<h3 class="font-title-sm text-title-sm text-on-background">Building RESTful APIs</h3>
+</div>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+<span class="font-label-caps text-label-caps bg-surface-container px-3 py-1 rounded-full text-on-surface-variant flex items-center gap-1">
+                           Not Started
+                       </span>
+<span class="material-symbols-outlined text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container text-primary font-body-sm full-width w-full">
+<div class="max-w-container-max mx-auto px-margin-desktop py-section-gap flex flex-col md:flex-row justify-between items-center w-full">
+<div class="font-title-sm text-title-sm font-bold text-primary mb-6 md:mb-0">SkillQuest</div>
+<div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Twitter</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+</div>
+<div class="text-on-surface-variant text-sm">© 2024 SkillQuest Education</div>
+</div>
+</footer>
+</body></html>

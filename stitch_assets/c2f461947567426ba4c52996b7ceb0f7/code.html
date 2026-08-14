@@ -1,0 +1,182 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillQuest - Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&amp;family=Inter:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#3b0900",
+                        "surface-variant": "#e4e1ee",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#892200",
+                        "surface-container": "#f0ecf9",
+                        "inverse-surface": "#302f39",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#e4e1ee",
+                        "surface-container-highest": "#e4e1ee",
+                        "on-error": "#ffffff",
+                        "outline": "#777587",
+                        "inverse-primary": "#c3c0ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#621500",
+                        "on-primary-fixed": "#0f0069",
+                        "on-background": "#1b1b24",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#4d44e3",
+                        "on-tertiary-container": "#ff9e82",
+                        "surface-container-low": "#f5f2ff",
+                        "primary-container": "#3525cd",
+                        "surface-bright": "#fcf8ff",
+                        "on-primary-container": "#b1afff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-secondary-container": "#64636e",
+                        "secondary": "#5e5d68",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "primary-fixed": "#e2dfff",
+                        "background": "#fcf8ff",
+                        "tertiary-fixed-dim": "#ffb5a0",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1b24",
+                        "inverse-on-surface": "#f3effc",
+                        "on-surface-variant": "#464555",
+                        "tertiary-fixed": "#ffdbd1",
+                        "error": "#ba1a1a",
+                        "surface": "#fcf8ff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c7c5d1",
+                        "primary": "#1e00a9",
+                        "surface-dim": "#dcd8e5",
+                        "surface-warm": "#fcfbf9",
+                        "surface-container-high": "#eae6f4",
+                        "on-secondary-fixed-variant": "#464650",
+                        "logic-indigo": "#4d44e3",
+                        "on-tertiary-fixed-variant": "#872100",
+                        "outline-variant": "#c7c4d8",
+                        "secondary-container": "#e4e1ee",
+                        "on-secondary-fixed": "#1b1b24",
+                        "comm-rose": "#8b5cf6",
+                        "solving-emerald": "#069488",
+                        "design-amber": "#f59e0b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-hero-mobile": ["Epilogue"],
+                        "display-hero": ["Epilogue"],
+                        "headline-lg": ["Epilogue"],
+                        "headline-lg-mobile": ["Epilogue"],
+                        "label-caps": ["Inter"],
+                        "title-md": ["Epilogue"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-hero-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-hero": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["42px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-caps": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "title-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-sm": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-sm antialiased selection:bg-logic-indigo selection:text-white">
+<!-- Onboarding Container -->
+<main class="flex-grow flex items-center justify-center p-margin-mobile md:p-margin-desktop w-full max-w-container-max mx-auto">
+<!-- White Paper Surface Card -->
+<div class="bg-surface-warm w-full max-w-5xl rounded-xl border border-surface-dim shadow-[0_4px_16px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row relative">
+<!-- Progress Indicator (Absolute Top) -->
+<div class="absolute top-0 left-0 w-full h-unit bg-surface-container-high">
+<div class="h-full bg-logic-indigo w-1/4 rounded-r-full transition-all duration-500 ease-out"></div>
+</div>
+<!-- Left Content: Form -->
+<div class="w-full md:w-1/2 p-margin-mobile md:p-margin-desktop flex flex-col justify-center">
+<!-- Step Counter -->
+<div class="mb-4">
+<span class="font-label-caps text-label-caps text-secondary tracking-widest uppercase">Step 1 / 4</span>
+</div>
+<!-- Headline -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-8 max-w-sm">
+                    Let's personalize your SkillQuest journey.
+                </h1>
+<!-- Form Fields -->
+<form class="space-y-6" onsubmit="event.preventDefault();">
+<!-- Name Field -->
+<div class="flex flex-col space-y-2">
+<label class="font-body-lg text-body-lg text-on-surface-variant font-medium" for="name">Name</label>
+<input class="bg-surface-container w-full border-none rounded-lg px-4 py-3 font-body-lg text-body-lg text-on-surface placeholder-outline focus:ring-2 focus:ring-logic-indigo focus:bg-surface-container-lowest transition-all" id="name" placeholder="Enter your full name" type="text">
+</div>
+<!-- College Field -->
+<div class="flex flex-col space-y-2">
+<label class="font-body-lg text-body-lg text-on-surface-variant font-medium" for="college">College</label>
+<input class="bg-surface-container w-full border-none rounded-lg px-4 py-3 font-body-lg text-body-lg text-on-surface placeholder-outline focus:ring-2 focus:ring-logic-indigo focus:bg-surface-container-lowest transition-all" id="college" placeholder="Where do you study?" type="text">
+</div>
+<!-- Two Column Row for Year & Stream -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Year of Study Field -->
+<div class="flex flex-col space-y-2">
+<label class="font-body-lg text-body-lg text-on-surface-variant font-medium" for="year">Year of Study</label>
+<div class="relative">
+<select class="appearance-none bg-surface-container w-full border-none rounded-lg px-4 py-3 font-body-lg text-body-lg text-on-surface focus:ring-2 focus:ring-logic-indigo focus:bg-surface-container-lowest transition-all cursor-pointer" id="year">
+<option disabled="" selected="" value="">Select Year</option>
+<option value="1">First Year</option>
+<option value="2">Second Year</option>
+<option value="3">Third Year</option>
+<option value="4">Fourth Year</option>
+<option value="5+">Postgrad / Other</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Stream Field -->
+<div class="flex flex-col space-y-2">
+<label class="font-body-lg text-body-lg text-on-surface-variant font-medium" for="stream">Stream</label>
+<input class="bg-surface-container w-full border-none rounded-lg px-4 py-3 font-body-lg text-body-lg text-on-surface placeholder-outline focus:ring-2 focus:ring-logic-indigo focus:bg-surface-container-lowest transition-all" id="stream" placeholder="e.g. Computer Science" type="text">
+</div>
+</div>
+<!-- Actions -->
+<div class="pt-8">
+<button class="w-full bg-primary hover:bg-primary-container text-white font-title-md text-title-md py-4 px-8 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md active:scale-95 flex items-center justify-center group" type="button">
+                            Continue
+                            <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Right Content: Cognitive Illustration -->
+<div class="hidden md:block md:w-1/2 bg-surface-container-low relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A highly abstract, premium digital illustration representing intellectual growth and cognition. The composition features smooth, floating geometric glass-like spheres and interconnected soft glowing lines against a warm off-white minimalist background. Subtle hints of deep indigo and soft emerald light refract through the translucent shapes. The aesthetic is clean, academic, and modern light-mode, inspiring a sense of calm discovery and professional learning without being cluttered." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBD4bOIGwusXd-fPXaTelzCbBQTI0tLEEOjpea9EYR-KiSbqGjkQKYprEQ1lyMogWieQ7Xc-KWgtNV-3dfBC7QObrHCNxlVBOnsVoc4sctNjef5bfC7QcGSC0oVZ3B2YfY038q_A0pPEk-xm5z21vxHc9d8BjDSngnnuCaFN6texSD_s6_yh_C-VLnEn62RW4GpC_xrtaMZIuc9RLMwGXYsVJC2EITfzUEIv5oPZ749U2mzYdcGlepM')"></div>
+<!-- Ambient overlay to blend with the card -->
+<div class="absolute inset-0 bg-gradient-to-r from-surface-warm to-transparent opacity-50 pointer-events-none"></div>
+</div>
+</div>
+</main>
+</body></html>

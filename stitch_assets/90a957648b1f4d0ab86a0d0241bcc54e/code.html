@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillQuest - Transition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1b1b24",
+                        "surface-container-low": "#f5f2ff",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "inverse-on-surface": "#f3effc",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1b24",
+                        "on-secondary-fixed": "#1b1b1c",
+                        "tertiary-container": "#a44100",
+                        "on-secondary-fixed-variant": "#474647",
+                        "primary-container": "#4f46e5",
+                        "secondary-fixed-dim": "#c8c6c7",
+                        "surface-bright": "#fcf8ff",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-highest": "#e4e1ee",
+                        "surface-container": "#f0ecf9",
+                        "inverse-primary": "#c3c0ff",
+                        "secondary": "#5f5e5f",
+                        "on-tertiary-container": "#ffd2be",
+                        "primary-fixed": "#e2dfff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "background": "#fcf8ff",
+                        "outline-variant": "#c7c4d8",
+                        "outline": "#777587",
+                        "inverse-surface": "#302f39",
+                        "surface": "#fcf8ff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e4e1ee",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "surface-container-high": "#eae6f4",
+                        "on-primary-container": "#dad7ff",
+                        "on-surface-variant": "#464555",
+                        "surface-tint": "#4d44e3",
+                        "secondary-container": "#e2dfe0",
+                        "on-secondary-container": "#636263",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#3525cd",
+                        "surface-dim": "#dcd8e5",
+                        "on-tertiary-fixed": "#351000",
+                        "secondary-fixed": "#e5e2e3",
+                        "tertiary": "#7e3000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "container-max": "1200px",
+                        "unit": "8px",
+                        "section-gap": "120px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "title-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md-mobile": ["Inter"],
+                        "hero-lg-mobile": ["Inter"],
+                        "hero-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "title-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-caps": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "hero-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "hero-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["42px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .score-circle {
+            background: conic-gradient(var(--tw-colors-primary) var(--progress, 0%), var(--tw-colors-surface-variant) 0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: --progress 1.5s ease-out;
+        }
+        @property --progress {
+            syntax: '<percentage>';
+            inherits: false;
+            initial-value: 0%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-sm">
+<!-- TopNavBar (Transactional/Close) -->
+<header class="bg-surface-container-low dark:bg-surface-container-lowest flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 sticky top-0 z-50">
+<div class="font-title-sm text-title-sm font-black text-primary dark:text-inverse-primary">SkillQuest</div>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:opacity-70 p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop w-full max-w-container-max mx-auto gap-section-gap">
+<div class="text-center flex flex-col items-center gap-6">
+<span class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest px-4 py-1 bg-tertiary-fixed rounded-full">DESIGN DIMENSION</span>
+<h1 class="font-hero-lg-mobile text-hero-lg-mobile md:font-hero-lg md:text-hero-lg text-primary-fixed-variant">Creative thinking unlocked.</h1>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 w-full">
+<!-- Main Score Card -->
+<div class="bg-surface border border-outline-variant rounded-[32px] p-8 md:p-12 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col items-center gap-6 w-full max-w-sm relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+<div class="absolute inset-0 bg-tertiary opacity-5 transition-opacity duration-300 group-hover:opacity-10 pointer-events-none"></div>
+<h2 class="font-title-sm text-title-sm text-on-surface">Creative Builder</h2>
+<div class="score-circle w-48 h-48 relative" style="--progress: 78%;">
+<div class="absolute inset-2 bg-surface rounded-full flex items-center justify-center shadow-inner">
+<span class="font-hero-lg text-hero-lg text-primary">78</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center">Top 22% of designers</p>
+</div>
+<!-- Insights Column -->
+<div class="flex flex-col gap-6 w-full max-w-md">
+<!-- Insight 1 -->
+<div class="bg-surface rounded-[24px] border border-outline-variant p-6 flex flex-col gap-3 shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+<div class="flex justify-between items-center w-full">
+<span class="font-body-lg text-body-lg text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">science</span>
+                            Experimentation
+                        </span>
+<span class="font-title-sm text-title-sm text-primary">84</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 84%"></div>
+</div>
+</div>
+<!-- Insight 2 -->
+<div class="bg-surface rounded-[24px] border border-outline-variant p-6 flex flex-col gap-3 shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+<div class="flex justify-between items-center w-full">
+<span class="font-body-lg text-body-lg text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">architecture</span>
+                            Spatial Thinking
+                        </span>
+<span class="font-title-sm text-title-sm text-primary">78</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<!-- Insight 3 -->
+<div class="bg-surface rounded-[24px] border border-outline-variant p-6 flex flex-col gap-3 shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+<div class="flex justify-between items-center w-full">
+<span class="font-body-lg text-body-lg text-on-surface font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">palette</span>
+                            Design Variety
+                        </span>
+<span class="font-title-sm text-title-sm text-primary">73</span>
+</div>
+<div class="h-2 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 73%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<button class="bg-primary text-on-primary font-body-lg text-body-lg font-semibold px-8 py-4 rounded-[16px] hover:bg-primary-fixed-variant transition-colors flex items-center gap-2 group shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-primary-fixed">
+                Continue to Communication
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</main>
+<script>
+        // Simple animation trigger on load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.score-circle').forEach(circle => {
+                const target = circle.style.getPropertyValue('--progress');
+                circle.style.setProperty('--progress', '0%');
+                setTimeout(() => {
+                    circle.style.setProperty('--progress', target);
+                }, 100);
+            });
+        });
+    </script>
+</body></html>

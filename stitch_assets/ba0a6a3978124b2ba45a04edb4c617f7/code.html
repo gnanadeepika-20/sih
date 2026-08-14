@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillQuest | Discover Your Cognitive Strengths</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#3b0900",
+                        "surface-variant": "#e4e1ee",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#892200",
+                        "surface-container": "#f0ecf9",
+                        "inverse-surface": "#302f39",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#e4e1ee",
+                        "surface-container-highest": "#e4e1ee",
+                        "on-error": "#ffffff",
+                        "outline": "#777587",
+                        "inverse-primary": "#c3c0ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#621500",
+                        "on-primary-fixed": "#0f0069",
+                        "on-background": "#1b1b24",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#4d44e3",
+                        "on-tertiary-container": "#ff9e82",
+                        "surface-container-low": "#f5f2ff",
+                        "primary-container": "#3525cd",
+                        "surface-bright": "#fcf8ff",
+                        "on-primary-container": "#b1afff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-secondary-container": "#64636e",
+                        "secondary": "#5e5d68",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "primary-fixed": "#e2dfff",
+                        "background": "#fcf8ff",
+                        "tertiary-fixed-dim": "#ffb5a0",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1b24",
+                        "inverse-on-surface": "#f3effc",
+                        "on-surface-variant": "#464555",
+                        "tertiary-fixed": "#ffdbd1",
+                        "error": "#ba1a1a",
+                        "surface": "#fcf8ff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c7c5d1",
+                        "primary": "#1e00a9",
+                        "surface-dim": "#dcd8e5",
+                        "surface-warm": "#fcfbf9",
+                        "surface-container-high": "#eae6f4",
+                        "on-secondary-fixed-variant": "#464650",
+                        "logic-indigo": "#4d44e3",
+                        "on-tertiary-fixed-variant": "#872100",
+                        "outline-variant": "#c7c4d8",
+                        "secondary-container": "#e4e1ee",
+                        "on-secondary-fixed": "#1b1b24",
+                        "comm-rose": "#8b5cf6",
+                        "solving-emerald": "#069488",
+                        "design-amber": "#f59e0b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "card": "16px",
+                        "game": "24px",
+                        "button": "12px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-hero-mobile": ["Epilogue"],
+                        "display-hero": ["Epilogue"],
+                        "headline-lg": ["Epilogue"],
+                        "headline-lg-mobile": ["Epilogue"],
+                        "label-caps": ["Inter"],
+                        "title-md": ["Epilogue"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-hero-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-hero": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["42px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-caps": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "title-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-sm": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fcfbf9; /* Surface-0 Base */
+            color: #1b1b24;
+        }
+        .surface-1 {
+            background-color: #ffffff;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.04);
+        }
+        .surface-2:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.08);
+        }
+        .sunk-state {
+            background-color: rgba(0,0,0,0.02);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="antialiased font-body-lg text-body-lg text-on-background bg-surface-warm min-h-screen flex flex-col">
+<!-- Top Navigation (JSON) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto shadow-sm bg-surface dark:bg-surface-dim">
+<div class="flex items-center gap-8">
+<span class="font-title-md text-title-md font-bold text-primary dark:text-inverse-primary">SkillQuest</span>
+<nav class="hidden md:flex gap-6">
+<a class="font-body-sm text-body-sm text-primary font-bold border-b-2 border-primary pb-1" href="#">Explore</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors hover:text-primary transition-all duration-200" href="#">Assessment</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors hover:text-primary transition-all duration-200" href="#">Roadmaps</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors hover:text-primary transition-all duration-200" href="#">About</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center justify-center p-2 rounded-full hover:bg-surface-variant transition-colors text-primary scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</button>
+<button class="hidden md:flex items-center justify-center p-2 rounded-full hover:bg-surface-variant transition-colors text-primary scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>
+</button>
+<span class="hidden md:block font-body-sm text-body-sm text-primary">Profile</span>
+</div>
+</header>
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full flex flex-col gap-[120px]">
+<!-- Hero Section -->
+<section class="grid grid-cols-4 md:grid-cols-12 gap-gutter items-center min-h-[60vh]">
+<div class="col-span-4 md:col-span-6 flex flex-col gap-8 z-10">
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-background">
+                    Discover How You Think. <br>
+<span class="text-logic-indigo">Discover Where You Belong.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    SkillQuest measures your real cognitive strengths through interactive challenges — not boring questionnaires.
+                </p>
+<div class="flex items-center gap-4 pt-4">
+<button class="bg-logic-indigo text-on-primary rounded-button px-8 py-4 font-body-lg text-body-lg font-semibold hover:bg-primary transition-colors shadow-sm flex items-center gap-2">
+                        Start 15-Min Assessment
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="col-span-4 md:col-span-6 relative h-[500px] w-full rounded-game sunk-state overflow-hidden flex items-center justify-center border border-outline-variant">
+<!-- Decorative abstract graphic representing puzzle/cognitive tiles -->
+<div class="absolute inset-0 bg-cover bg-center opacity-90" data-alt="A stylized 3D rendered composition representing cognitive assessment. It features floating, interlocking geometric puzzle pieces, elegant abstract graphs, and glowing progress indicators. The style is clean, premium minimalism, suitable for a professional education platform. The lighting is soft and high-key white, creating a bright light-mode aesthetic with subtle accents of indigo and emerald green against a warm off-white background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALurzw6g7gpI2gA68PARlBvzi25dTIQZWZ4hVOreJLxCmbrkvjlPaa2yvLZKvSvLCPM-w_MR7FW-YPqey7hFTTxTTAvpbfQQ5gcdjSXwAD01MUzo3_QGaAqR6jlaTcHBT82cK_XlE7O0nWgmz2QqTsM6zPvkSJLd-QFLC-eWFw-EGfduvny30RUj6i5VehUj452WAYNDC1KlEgvnwN5euudzKbkj8zPRYzAv7ODChrLbRZc9JbtzHk')"></div>
+<!-- Overlay UI Elements mimicking interactivity -->
+<div class="absolute bottom-8 right-8 surface-1 rounded-card p-4 flex flex-col gap-2 w-48 shadow-lg z-20">
+<span class="font-label-caps text-label-caps text-secondary uppercase">Logic Score</span>
+<div class="flex items-end gap-2">
+<span class="font-title-md text-title-md text-logic-indigo">87</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mb-1">/ 100</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 mt-1">
+<div class="bg-logic-indigo h-2 rounded-full" style="width: 87%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="flex flex-col gap-12">
+<div class="text-center max-w-2xl mx-auto flex flex-col gap-4">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">How It Works</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">A streamlined process to map your unique cognitive fingerprint.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter relative">
+<!-- Connecting Line (Desktop only) -->
+<div class="hidden md:block absolute top-12 left-1/8 right-1/8 h-[2px] bg-surface-container-high -z-10 w-3/4 mx-auto"></div>
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center gap-4 group">
+<div class="w-24 h-24 rounded-full surface-1 flex items-center justify-center group-hover:surface-2 transition-all duration-300 text-logic-indigo">
+<span class="material-symbols-outlined text-[40px]">sports_esports</span>
+</div>
+<h3 class="font-title-md text-title-md">1. Play</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Engage with short, interactive mini-games.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center gap-4 group">
+<div class="w-24 h-24 rounded-full surface-1 flex items-center justify-center group-hover:surface-2 transition-all duration-300 text-solving-emerald">
+<span class="material-symbols-outlined text-[40px]">psychology</span>
+</div>
+<h3 class="font-title-md text-title-md">2. Think</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Solve real-world problems intuitively.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center gap-4 group">
+<div class="w-24 h-24 rounded-full surface-1 flex items-center justify-center group-hover:surface-2 transition-all duration-300 text-design-amber">
+<span class="material-symbols-outlined text-[40px]">explore</span>
+</div>
+<h3 class="font-title-md text-title-md">3. Discover</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Reveal your innate cognitive strengths.</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center gap-4 group">
+<div class="w-24 h-24 rounded-full surface-1 flex items-center justify-center group-hover:surface-2 transition-all duration-300 text-comm-rose">
+<span class="material-symbols-outlined text-[40px]">trending_up</span>
+</div>
+<h3 class="font-title-md text-title-md">4. Grow</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Get personalized roadmaps for success.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (JSON) -->
+<footer class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container dark:bg-surface-container-highest bg-surface-container-low dark:bg-surface-container-high flat no shadows mt-auto">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface">SkillQuest</span>
+<p class="font-body-sm text-body-sm text-secondary dark:text-secondary-fixed">Think differently. Discover your direction.</p>
+</div>
+<nav class="flex gap-6">
+<a class="font-body-sm text-body-sm text-secondary hover:text-on-surface transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">About</a>
+<a class="font-body-sm text-body-sm text-secondary hover:text-on-surface transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Careers</a>
+<a class="font-body-sm text-body-sm text-secondary hover:text-on-surface transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Contact</a>
+<a class="font-body-sm text-body-sm text-secondary hover:text-on-surface transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy</a>
+</nav>
+</footer>
+</body></html>

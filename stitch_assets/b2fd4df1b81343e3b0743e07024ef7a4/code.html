@@ -1,0 +1,265 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SkillQuest - Signal Composer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#3b0900",
+                        "surface-variant": "#e4e1ee",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#892200",
+                        "surface-container": "#f0ecf9",
+                        "inverse-surface": "#302f39",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#e4e1ee",
+                        "surface-container-highest": "#e4e1ee",
+                        "on-error": "#ffffff",
+                        "outline": "#777587",
+                        "inverse-primary": "#c3c0ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#621500",
+                        "on-primary-fixed": "#0f0069",
+                        "on-background": "#1b1b24",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#4d44e3",
+                        "on-tertiary-container": "#ff9e82",
+                        "surface-container-low": "#f5f2ff",
+                        "primary-container": "#3525cd",
+                        "surface-bright": "#fcf8ff",
+                        "on-primary-container": "#b1afff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-secondary-container": "#64636e",
+                        "secondary": "#5e5d68",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "primary-fixed": "#e2dfff",
+                        "background": "#fcf8ff",
+                        "tertiary-fixed-dim": "#ffb5a0",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1b24",
+                        "inverse-on-surface": "#f3effc",
+                        "on-surface-variant": "#464555",
+                        "tertiary-fixed": "#ffdbd1",
+                        "error": "#ba1a1a",
+                        "surface": "#fcf8ff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#c7c5d1",
+                        "primary": "#1e00a9",
+                        "surface-dim": "#dcd8e5",
+                        "surface-warm": "#fcfbf9",
+                        "surface-container-high": "#eae6f4",
+                        "on-secondary-fixed-variant": "#464650",
+                        "logic-indigo": "#4d44e3",
+                        "on-tertiary-fixed-variant": "#872100",
+                        "outline-variant": "#c7c4d8",
+                        "secondary-container": "#e4e1ee",
+                        "on-secondary-fixed": "#1b1b24",
+                        "comm-rose": "#8b5cf6",
+                        "solving-emerald": "#069488",
+                        "design-amber": "#f59e0b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-hero-mobile": ["Epilogue"],
+                        "display-hero": ["Epilogue"],
+                        "headline-lg": ["Epilogue"],
+                        "headline-lg-mobile": ["Epilogue"],
+                        "label-caps": ["Inter"],
+                        "title-md": ["Epilogue"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-hero-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-hero": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["42px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-caps": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "title-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-sm": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .drag-item { cursor: grab; }
+        .drag-item:active { cursor: grabbing; }
+        .drop-zone { min-height: 80px; transition: background-color 0.2s ease; }
+        .drop-zone.drag-over { background-color: theme('colors.surface-container'); border-color: theme('colors.comm-rose'); }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-lg">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto shadow-sm bg-surface dark:bg-surface-dim hidden md:flex">
+<div class="flex items-center gap-8">
+<span class="font-title-md text-title-md font-bold text-primary dark:text-inverse-primary">SkillQuest</span>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-sm text-body-sm hover:text-primary transition-all duration-200" href="#">Explore</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-sm text-body-sm hover:text-primary transition-all duration-200" href="#">Assessment</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-sm text-body-sm hover:text-primary transition-all duration-200" href="#">Roadmaps</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-sm text-body-sm hover:text-primary transition-all duration-200" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</button>
+<button class="bg-primary text-on-primary font-body-sm text-body-sm px-4 py-2 rounded-lg hover:bg-primary-container transition-colors scale-95 active:scale-90 transition-transform">Profile</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 px-margin-desktop md:px-margin-desktop max-w-container-max mx-auto w-full">
+<header class="mb-12 max-w-3xl">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">Build the Signal: Structure a clear team update.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Effective communication relies on structure. Drag and drop the components below into the correct sequence to compose a clear, actionable team update.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Puzzle Canvas -->
+<div class="lg:col-span-8">
+<div class="bg-surface-warm rounded-[24px] shadow-sm border border-surface-variant p-8 relative overflow-hidden sunk-state">
+<!-- Subtle Inner Shadow overlay -->
+<div class="absolute inset-0 shadow-[inset_0_4px_12px_rgba(0,0,0,0.02)] pointer-events-none rounded-[24px]"></div>
+<h2 class="font-title-md text-title-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-comm-rose" data-icon="view_timeline">view_timeline</span>
+                        Signal Structure
+                    </h2>
+<div class="space-y-4" id="drop-container">
+<!-- Drop Zones -->
+<div class="drop-zone rounded-xl border-2 border-dashed border-outline-variant p-4 flex flex-col justify-center items-center text-secondary font-body-sm text-body-sm" data-position="1">
+                            Slot 1 (Top)
+                        </div>
+<div class="drop-zone rounded-xl border-2 border-dashed border-outline-variant p-4 flex flex-col justify-center items-center text-secondary font-body-sm text-body-sm" data-position="2">
+                            Slot 2
+                        </div>
+<div class="drop-zone rounded-xl border-2 border-dashed border-outline-variant p-4 flex flex-col justify-center items-center text-secondary font-body-sm text-body-sm" data-position="3">
+                            Slot 3
+                        </div>
+<div class="drop-zone rounded-xl border-2 border-dashed border-outline-variant p-4 flex flex-col justify-center items-center text-secondary font-body-sm text-body-sm" data-position="4">
+                            Slot 4 (Bottom)
+                        </div>
+</div>
+<div class="mt-8 flex justify-end">
+<button class="bg-primary text-on-primary font-body-lg text-body-lg px-8 py-4 rounded-xl hover:bg-primary-container transition-colors shadow-sm active:translate-y-1">Evaluate Signal</button>
+</div>
+</div>
+</div>
+<!-- Components Pool & Sidebar -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Signal Clarity Indicator -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-variant p-6">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-4 flex justify-between items-center">
+                        Signal Clarity
+                        <span class="font-body-sm text-body-sm text-comm-rose">0%</span>
+</h3>
+<div class="w-full bg-surface-container rounded-full h-2 mb-2 overflow-hidden">
+<div class="bg-comm-rose h-2 rounded-full transition-all duration-500 ease-out" style="width: 0%;"></div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary text-sm">Sequence components correctly to increase clarity.</p>
+</div>
+<!-- Draggable Pieces -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-variant p-6 flex-grow">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-4">Components Pool</h3>
+<div class="space-y-3" id="drag-container">
+<!-- Draggable Item 1 -->
+<div class="drag-item bg-surface-bright border border-surface-variant rounded-lg p-4 shadow-[0_2px_4px_rgba(0,0,0,0.02)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all flex items-start gap-3" data-type="ask" draggable="true" id="item-ask">
+<span class="material-symbols-outlined text-outline mt-0.5 cursor-grab" data-icon="drag_indicator">drag_indicator</span>
+<div>
+<h4 class="font-title-md text-title-md text-sm mb-1 text-on-surface">The Ask</h4>
+<p class="font-body-sm text-body-sm text-secondary text-xs">"Please review the attached designs by Friday."</p>
+</div>
+</div>
+<!-- Draggable Item 2 -->
+<div class="drag-item bg-surface-bright border border-surface-variant rounded-lg p-4 shadow-[0_2px_4px_rgba(0,0,0,0.02)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all flex items-start gap-3" data-type="context" draggable="true" id="item-context">
+<span class="material-symbols-outlined text-outline mt-0.5 cursor-grab" data-icon="drag_indicator">drag_indicator</span>
+<div>
+<h4 class="font-title-md text-title-md text-sm mb-1 text-on-surface">Context</h4>
+<p class="font-body-sm text-body-sm text-secondary text-xs">"We need to finalize Q3 assets before the sprint ends."</p>
+</div>
+</div>
+<!-- Draggable Item 3 -->
+<div class="drag-item bg-surface-bright border border-surface-variant rounded-lg p-4 shadow-[0_2px_4px_rgba(0,0,0,0.02)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all flex items-start gap-3" data-type="opener" draggable="true" id="item-opener">
+<span class="material-symbols-outlined text-outline mt-0.5 cursor-grab" data-icon="drag_indicator">drag_indicator</span>
+<div>
+<h4 class="font-title-md text-title-md text-sm mb-1 text-on-surface">Opener</h4>
+<p class="font-body-sm text-body-sm text-secondary text-xs">"Hi Team, quick update on Project Alpha."</p>
+</div>
+</div>
+<!-- Draggable Item 4 -->
+<div class="drag-item bg-surface-bright border border-surface-variant rounded-lg p-4 shadow-[0_2px_4px_rgba(0,0,0,0.02)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)] hover:-translate-y-0.5 transition-all flex items-start gap-3" data-type="closer" draggable="true" id="item-closer">
+<span class="material-symbols-outlined text-outline mt-0.5 cursor-grab" data-icon="drag_indicator">drag_indicator</span>
+<div>
+<h4 class="font-title-md text-title-md text-sm mb-1 text-on-surface">Closer</h4>
+<p class="font-body-sm text-body-sm text-secondary text-xs">"Thanks for your quick turnaround on this."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container dark:bg-surface-container-highest mt-auto">
+<div class="font-label-caps text-label-caps text-on-surface">SkillQuest</div>
+<div class="font-body-sm text-body-sm text-secondary dark:text-secondary-fixed">Think differently. Discover your direction.</div>
+<div class="flex gap-6">
+<a class="text-secondary font-body-sm text-body-sm hover:text-on-surface transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">About</a>
+<a class="text-secondary font-body-sm text-body-sm hover:text-on-surface transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Careers</a>
+<a class="text-secondary font-body-sm text-body-sm hover:text-on-surface transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Contact</a>
+<a class="text-secondary font-body-sm text-body-sm hover:text-on-surface transition-colors opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy</a>
+</div>
+</footer>
+<script>
+        // Simple Drag and Drop visual interaction (functional implementation would require more logic)
+        const draggables = document.querySelectorAll('.drag-item');
+        const dropZones = document.querySelectorAll('.drop-zone');
+
+        draggables.forEach(draggable => {
+            draggable.addEventListener('dragstart', () => {
+                draggable.classList.add('opacity-50');
+            });
+            draggable.addEventListener('dragend', () => {
+                draggable.classList.remove('opacity-50');
+            });
+        });
+
+        dropZones.forEach(zone => {
+            zone.addEventListener('dragover', e => {
+                e.preventDefault();
+                zone.classList.add('drag-over');
+            });
+            zone.addEventListener('dragleave', () => {
+                zone.classList.remove('drag-over');
+            });
+            zone.addEventListener('drop', () => {
+                zone.classList.remove('drag-over');
+                // Visual feedback only for demo
+                zone.innerHTML = `<span class="material-symbols-outlined text-comm-rose">check_circle</span>`;
+                zone.classList.add('bg-surface-container-low', 'border-comm-rose');
+            });
+        });
+    </script>
+</body></html>

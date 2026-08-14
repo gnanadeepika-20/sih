@@ -1,0 +1,988 @@
+{
+  "users": [
+    {
+      "id": "usr_r936nv54t",
+      "name": "Sarah Connor",
+      "email": "test_student_1786640675664@university.edu",
+      "passwordHash": "e56c4c42fc7c2f50e9a8dae55b6d655e190b09958eb01a9efd77aa219adb52f7",
+      "educationLevel": "College Student",
+      "currentField": "Exploring",
+      "xp": 150,
+      "level": 1,
+      "streak": 1,
+      "createdAt": "2026-08-13T17:04:35.711Z"
+    },
+    {
+      "id": "usr_gydk2hlrv",
+      "name": "Sarah Connor",
+      "email": "student_sarah_170530@university.edu",
+      "passwordHash": "e56c4c42fc7c2f50e9a8dae55b6d655e190b09958eb01a9efd77aa219adb52f7",
+      "educationLevel": "Graduate",
+      "currentField": "Exploring",
+      "xp": 150,
+      "level": 1,
+      "streak": 1,
+      "createdAt": "2026-08-13T17:06:08.256Z"
+    },
+    {
+      "id": "usr_0sdhg4oph",
+      "name": "Alice Explorer",
+      "email": "alice_1786641732543@test.com",
+      "passwordHash": "e5a98eb49a0f20513b92ea821047db3d98a0099a3a0e49911f1a94ca356b9c24",
+      "educationLevel": "12th Student",
+      "xp": 410,
+      "level": 1,
+      "streak": 1,
+      "onboardingComplete": true,
+      "selectedCareerId": "backend-dev",
+      "createdAt": "2026-08-13T17:22:12.580Z"
+    },
+    {
+      "id": "usr_iwrmr8fbd",
+      "name": "Bob Designer",
+      "email": "bob_1786641732625@test.com",
+      "passwordHash": "e5a98eb49a0f20513b92ea821047db3d98a0099a3a0e49911f1a94ca356b9c24",
+      "educationLevel": "College Student",
+      "xp": 240,
+      "level": 1,
+      "streak": 1,
+      "onboardingComplete": false,
+      "selectedCareerId": null,
+      "createdAt": "2026-08-13T17:22:12.628Z"
+    },
+    {
+      "id": "usr_kfvys0cf7",
+      "name": "Alice Explorer",
+      "email": "alice_1786642164796@test.com",
+      "passwordHash": "e5a98eb49a0f20513b92ea821047db3d98a0099a3a0e49911f1a94ca356b9c24",
+      "educationLevel": "12th Student",
+      "xp": 410,
+      "level": 1,
+      "streak": 1,
+      "onboardingComplete": true,
+      "selectedCareerId": "backend-dev",
+      "createdAt": "2026-08-13T17:29:24.826Z"
+    },
+    {
+      "id": "usr_3aisds805",
+      "name": "Bob Designer",
+      "email": "bob_1786642164869@test.com",
+      "passwordHash": "e5a98eb49a0f20513b92ea821047db3d98a0099a3a0e49911f1a94ca356b9c24",
+      "educationLevel": "College Student",
+      "xp": 240,
+      "level": 1,
+      "streak": 1,
+      "onboardingComplete": false,
+      "selectedCareerId": null,
+      "createdAt": "2026-08-13T17:29:24.871Z"
+    },
+    {
+      "id": "usr_qbxwfexeo",
+      "name": "jjjjj",
+      "email": "hope.foundation@example.com",
+      "passwordHash": "e5a98eb49a0f20513b92ea821047db3d98a0099a3a0e49911f1a94ca356b9c24",
+      "educationLevel": "Graduate",
+      "xp": 1080,
+      "level": 3,
+      "streak": 1,
+      "onboardingComplete": false,
+      "selectedCareerId": null,
+      "createdAt": "2026-08-13T17:30:22.910Z"
+    }
+  ],
+  "onboarding": {
+    "usr_gydk2hlrv": {
+      "status": "college-student",
+      "interests": [
+        "Technology",
+        "Design",
+        "Business"
+      ],
+      "goal": "find-strengths"
+    },
+    "usr_0sdhg4oph": {
+      "status": "12th-student",
+      "interests": [
+        "Technology",
+        "Data"
+      ],
+      "goal": "find-strengths",
+      "completedAt": "2026-08-13T17:22:12.591Z"
+    },
+    "usr_kfvys0cf7": {
+      "status": "12th-student",
+      "interests": [
+        "Technology",
+        "Data"
+      ],
+      "goal": "find-strengths",
+      "completedAt": "2026-08-13T17:29:24.837Z"
+    }
+  },
+  "game_attempts": [
+    {
+      "id": "att_x1qz7dcfu",
+      "userId": "demo_user",
+      "gameId": "pattern-quest",
+      "accuracy": 0.95,
+      "completionTime": 90,
+      "difficulty": 4,
+      "mistakes": 1,
+      "createdAt": "2026-08-13T17:04:35.727Z"
+    },
+    {
+      "id": "att_iycy0cxlx",
+      "userId": "usr_0sdhg4oph",
+      "gameId": "pattern-quest",
+      "score": 94,
+      "accuracy": 1,
+      "completionTimeMs": 45000,
+      "difficulty": 4,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:22:12.597Z"
+    },
+    {
+      "id": "att_dt2pkcf62",
+      "userId": "usr_0sdhg4oph",
+      "gameId": "circuit-bridge",
+      "score": 99,
+      "accuracy": 1,
+      "completionTimeMs": 60000,
+      "difficulty": 5,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:22:12.603Z"
+    },
+    {
+      "id": "att_ooyiob6eq",
+      "userId": "usr_0sdhg4oph",
+      "gameId": "backend-sim",
+      "score": 92,
+      "accuracy": 0.95,
+      "completionTimeMs": 50000,
+      "difficulty": 4,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:22:12.607Z"
+    },
+    {
+      "id": "att_hu7o7j9kg",
+      "userId": "usr_iwrmr8fbd",
+      "gameId": "powder-sandbox",
+      "score": 92,
+      "accuracy": 0.95,
+      "completionTimeMs": 40000,
+      "difficulty": 4,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:22:12.633Z"
+    },
+    {
+      "id": "att_h1kekhq69",
+      "userId": "usr_iwrmr8fbd",
+      "gameId": "shape-shift",
+      "score": 92,
+      "accuracy": 0.95,
+      "completionTimeMs": 30000,
+      "difficulty": 4,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:22:12.639Z"
+    },
+    {
+      "id": "att_slmhlahpv",
+      "userId": "demo_user",
+      "gameId": "pattern-quest",
+      "score": 72,
+      "accuracy": 0.6,
+      "completionTimeMs": 120000,
+      "difficulty": 3,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:25:32.192Z"
+    },
+    {
+      "id": "att_bzywswlem",
+      "userId": "demo_user",
+      "gameId": "pattern-quest",
+      "score": 72,
+      "accuracy": 0.6,
+      "completionTimeMs": 120000,
+      "difficulty": 3,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:25:40.369Z"
+    },
+    {
+      "id": "att_a6wd9vhiu",
+      "userId": "demo_user",
+      "gameId": "powder-sandbox",
+      "score": 85,
+      "accuracy": 0.92,
+      "completionTimeMs": 120000,
+      "difficulty": 3,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:25:48.431Z"
+    },
+    {
+      "id": "att_zr4j24c79",
+      "userId": "usr_kfvys0cf7",
+      "gameId": "pattern-quest",
+      "score": 94,
+      "accuracy": 1,
+      "completionTimeMs": 45000,
+      "difficulty": 4,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:29:24.842Z"
+    },
+    {
+      "id": "att_rwkjqp9fs",
+      "userId": "usr_kfvys0cf7",
+      "gameId": "circuit-bridge",
+      "score": 99,
+      "accuracy": 1,
+      "completionTimeMs": 60000,
+      "difficulty": 5,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:29:24.847Z"
+    },
+    {
+      "id": "att_hvutsresn",
+      "userId": "usr_kfvys0cf7",
+      "gameId": "backend-sim",
+      "score": 92,
+      "accuracy": 0.95,
+      "completionTimeMs": 50000,
+      "difficulty": 4,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:29:24.852Z"
+    },
+    {
+      "id": "att_mo7rud2an",
+      "userId": "usr_3aisds805",
+      "gameId": "powder-sandbox",
+      "score": 92,
+      "accuracy": 0.95,
+      "completionTimeMs": 40000,
+      "difficulty": 4,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:29:24.876Z"
+    },
+    {
+      "id": "att_oig74cs0r",
+      "userId": "usr_3aisds805",
+      "gameId": "shape-shift",
+      "score": 92,
+      "accuracy": 0.95,
+      "completionTimeMs": 30000,
+      "difficulty": 4,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:29:24.881Z"
+    },
+    {
+      "id": "att_x6xqg8q76",
+      "userId": "demo_user",
+      "gameId": "pattern-quest",
+      "score": 70,
+      "accuracy": 0.6,
+      "completionTimeMs": 5336,
+      "difficulty": 3,
+      "mistakes": 1,
+      "createdAt": "2026-08-13T17:29:45.520Z"
+    },
+    {
+      "id": "att_ekkim7bme",
+      "userId": "usr_qbxwfexeo",
+      "gameId": "pattern-quest",
+      "score": 84,
+      "accuracy": 0.9,
+      "completionTimeMs": 5759,
+      "difficulty": 3,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:30:41.287Z"
+    },
+    {
+      "id": "att_gqrwfe1a2",
+      "userId": "usr_qbxwfexeo",
+      "gameId": "memory-matrix",
+      "score": 84,
+      "accuracy": 0.9,
+      "completionTimeMs": 5376,
+      "difficulty": 3,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:30:49.460Z"
+    },
+    {
+      "id": "att_jpjeobw2w",
+      "userId": "usr_qbxwfexeo",
+      "gameId": "memory-matrix",
+      "score": 84,
+      "accuracy": 0.9,
+      "completionTimeMs": 4246,
+      "difficulty": 3,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:30:54.254Z"
+    },
+    {
+      "id": "att_r1y239vv8",
+      "userId": "usr_qbxwfexeo",
+      "gameId": "shape-shift",
+      "score": 85,
+      "accuracy": 0.92,
+      "completionTimeMs": 4702,
+      "difficulty": 3,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:31:00.952Z"
+    },
+    {
+      "id": "att_84k9c7izd",
+      "userId": "usr_qbxwfexeo",
+      "gameId": "circuit-bridge",
+      "score": 92,
+      "accuracy": 0.95,
+      "completionTimeMs": 7378,
+      "difficulty": 4,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:31:10.666Z"
+    },
+    {
+      "id": "att_mw1asdrgr",
+      "userId": "usr_qbxwfexeo",
+      "gameId": "circuit-bridge",
+      "score": 92,
+      "accuracy": 0.95,
+      "completionTimeMs": 7379,
+      "difficulty": 4,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:31:10.674Z"
+    },
+    {
+      "id": "att_ywclpx77l",
+      "userId": "usr_qbxwfexeo",
+      "gameId": "decision-dash",
+      "score": 88,
+      "accuracy": 0.99,
+      "completionTimeMs": 10316,
+      "difficulty": 3,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:31:22.784Z"
+    },
+    {
+      "id": "att_sjk1irr99",
+      "userId": "usr_qbxwfexeo",
+      "gameId": "backend-sim",
+      "score": 93,
+      "accuracy": 0.98,
+      "completionTimeMs": 4497,
+      "difficulty": 4,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:31:29.540Z"
+    },
+    {
+      "id": "att_f642xsy1z",
+      "userId": "usr_qbxwfexeo",
+      "gameId": "powder-sandbox",
+      "score": 85,
+      "accuracy": 0.92,
+      "completionTimeMs": 3414,
+      "difficulty": 3,
+      "mistakes": 0,
+      "createdAt": "2026-08-13T17:31:42.270Z"
+    }
+  ],
+  "skill_profiles": {
+    "usr_r936nv54t": {
+      "logical_reasoning": 75,
+      "problem_solving": 78,
+      "creativity": 70,
+      "visual_reasoning": 80,
+      "memory": 72,
+      "decision_making": 68,
+      "attention": 75,
+      "spatial_reasoning": 74,
+      "updatedAt": "2026-08-13T17:04:35.711Z"
+    },
+    "demo_user": {
+      "logical_reasoning": 80,
+      "problem_solving": 75,
+      "creativity": 78,
+      "visual_reasoning": 83,
+      "memory": 75,
+      "decision_making": 75,
+      "attention": 75,
+      "spatial_reasoning": 75,
+      "updatedAt": "2026-08-13T17:29:45.520Z"
+    },
+    "usr_gydk2hlrv": {
+      "logical_reasoning": 75,
+      "problem_solving": 78,
+      "creativity": 70,
+      "visual_reasoning": 80,
+      "memory": 72,
+      "decision_making": 68,
+      "attention": 75,
+      "spatial_reasoning": 74,
+      "updatedAt": "2026-08-13T17:06:08.256Z"
+    },
+    "usr_0sdhg4oph": {
+      "logical_reasoning": 77,
+      "problem_solving": 74,
+      "creativity": 60,
+      "visual_reasoning": 65,
+      "memory": 60,
+      "decision_making": 60,
+      "attention": 60,
+      "spatial_reasoning": 60,
+      "updatedAt": "2026-08-13T17:22:12.607Z"
+    },
+    "usr_iwrmr8fbd": {
+      "logical_reasoning": 60,
+      "problem_solving": 60,
+      "creativity": 69,
+      "visual_reasoning": 68,
+      "memory": 60,
+      "decision_making": 60,
+      "attention": 60,
+      "spatial_reasoning": 68,
+      "updatedAt": "2026-08-13T17:22:12.639Z"
+    },
+    "usr_kfvys0cf7": {
+      "logical_reasoning": 77,
+      "problem_solving": 74,
+      "creativity": 60,
+      "visual_reasoning": 65,
+      "memory": 60,
+      "decision_making": 60,
+      "attention": 60,
+      "spatial_reasoning": 60,
+      "updatedAt": "2026-08-13T17:29:24.852Z"
+    },
+    "usr_3aisds805": {
+      "logical_reasoning": 60,
+      "problem_solving": 60,
+      "creativity": 69,
+      "visual_reasoning": 68,
+      "memory": 60,
+      "decision_making": 60,
+      "attention": 60,
+      "spatial_reasoning": 68,
+      "updatedAt": "2026-08-13T17:29:24.881Z"
+    },
+    "usr_qbxwfexeo": {
+      "logical_reasoning": 78,
+      "problem_solving": 79,
+      "creativity": 67,
+      "visual_reasoning": 69,
+      "memory": 70,
+      "decision_making": 67,
+      "attention": 67,
+      "spatial_reasoning": 66,
+      "updatedAt": "2026-08-13T17:31:42.270Z"
+    }
+  },
+  "roadmaps": {
+    "usr_0sdhg4oph": {
+      "userId": "usr_0sdhg4oph",
+      "careerId": "backend-dev",
+      "roleTitle": "Backend Software Engineer",
+      "overview": "Personalized Backend Software Engineer path targeting your key skill gaps in attention and decision making.",
+      "generatedAt": "2026-08-13T17:22:12.618Z",
+      "tasks": [
+        {
+          "id": "task_1",
+          "phase": "Month 1",
+          "milestoneTitle": "Foundations & attention Mastery",
+          "title": "Master Fundamental Patterns in attention",
+          "description": "Focus on closing your primary skill gap through hands-on exercises in attention.",
+          "skill": "attention",
+          "status": "COMPLETED",
+          "xp": 50,
+          "project": "Build a custom prototype demonstrating attention"
+        },
+        {
+          "id": "task_2",
+          "phase": "Month 2",
+          "milestoneTitle": "Advanced decision making Implementation",
+          "title": "Apply decision making to Real-World Scenarios",
+          "description": "Deep dive into industry standards and production-ready implementations of decision making.",
+          "skill": "decision making",
+          "status": "AVAILABLE",
+          "xp": 50,
+          "project": "Architect an end-to-end module integrating decision making"
+        },
+        {
+          "id": "task_3",
+          "phase": "Month 3",
+          "milestoneTitle": "Production Tooling & Best Practices",
+          "title": "Tooling Mastery (Node.js / Express, PostgreSQL & Redis)",
+          "description": "Integrate industry tools into your daily workflow to reach benchmark efficiency.",
+          "skill": "Tools & Systems",
+          "status": "LOCKED",
+          "xp": 50,
+          "project": "Build and deploy a benchmark project using Node.js / Express"
+        },
+        {
+          "id": "task_4",
+          "phase": "Month 4",
+          "milestoneTitle": "Industry Capstone & Portfolio Readiness",
+          "title": "Complete End-to-End Capstone Portfolio",
+          "description": "Synthesize all learned domains into a production-grade portfolio project ready for technical review.",
+          "skill": "Portfolio",
+          "status": "LOCKED",
+          "xp": 100,
+          "project": "Publish comprehensive Backend Software Engineer Capstone Repo & System Docs"
+        }
+      ]
+    },
+    "demo_user": {
+      "userId": "demo_user",
+      "careerId": "ui-ux-designer",
+      "roleTitle": "UI/UX Product Designer",
+      "overview": "Personalized UI/UX Product Designer path targeting your key skill gaps in creativity and spatial reasoning.",
+      "generatedAt": "2026-08-13T17:26:19.898Z",
+      "tasks": [
+        {
+          "id": "task_1",
+          "phase": "Month 1",
+          "milestoneTitle": "Foundations & creativity Mastery",
+          "title": "Master Fundamental Patterns in creativity",
+          "description": "Focus on closing your primary skill gap through hands-on exercises in creativity.",
+          "skill": "creativity",
+          "status": "COMPLETED",
+          "xp": 50,
+          "project": "Build a custom prototype demonstrating creativity"
+        },
+        {
+          "id": "task_2",
+          "phase": "Month 2",
+          "milestoneTitle": "Advanced spatial reasoning Implementation",
+          "title": "Apply spatial reasoning to Real-World Scenarios",
+          "description": "Deep dive into industry standards and production-ready implementations of spatial reasoning.",
+          "skill": "spatial reasoning",
+          "status": "AVAILABLE",
+          "xp": 50,
+          "project": "Architect an end-to-end module integrating spatial reasoning"
+        },
+        {
+          "id": "task_3",
+          "phase": "Month 3",
+          "milestoneTitle": "Production Tooling & Best Practices",
+          "title": "Tooling Mastery (Figma & Tokens, User Research)",
+          "description": "Integrate industry tools into your daily workflow to reach benchmark efficiency.",
+          "skill": "Tools & Systems",
+          "status": "LOCKED",
+          "xp": 50,
+          "project": "Build and deploy a benchmark project using Figma & Tokens"
+        },
+        {
+          "id": "task_4",
+          "phase": "Month 4",
+          "milestoneTitle": "Industry Capstone & Portfolio Readiness",
+          "title": "Complete End-to-End Capstone Portfolio",
+          "description": "Synthesize all learned domains into a production-grade portfolio project ready for technical review.",
+          "skill": "Portfolio",
+          "status": "LOCKED",
+          "xp": 100,
+          "project": "Publish comprehensive UI/UX Product Designer Capstone Repo & System Docs"
+        }
+      ]
+    },
+    "usr_kfvys0cf7": {
+      "userId": "usr_kfvys0cf7",
+      "careerId": "backend-dev",
+      "roleTitle": "Backend Software Engineer",
+      "overview": "Personalized Backend Software Engineer path targeting your key skill gaps in attention and decision making.",
+      "generatedAt": "2026-08-13T17:29:24.862Z",
+      "tasks": [
+        {
+          "id": "task_1",
+          "phase": "Month 1",
+          "milestoneTitle": "Foundations & attention Mastery",
+          "title": "Master Fundamental Patterns in attention",
+          "description": "Focus on closing your primary skill gap through hands-on exercises in attention.",
+          "skill": "attention",
+          "status": "COMPLETED",
+          "xp": 50,
+          "project": "Build a custom prototype demonstrating attention"
+        },
+        {
+          "id": "task_2",
+          "phase": "Month 2",
+          "milestoneTitle": "Advanced decision making Implementation",
+          "title": "Apply decision making to Real-World Scenarios",
+          "description": "Deep dive into industry standards and production-ready implementations of decision making.",
+          "skill": "decision making",
+          "status": "AVAILABLE",
+          "xp": 50,
+          "project": "Architect an end-to-end module integrating decision making"
+        },
+        {
+          "id": "task_3",
+          "phase": "Month 3",
+          "milestoneTitle": "Production Tooling & Best Practices",
+          "title": "Tooling Mastery (Node.js / Express, PostgreSQL & Redis)",
+          "description": "Integrate industry tools into your daily workflow to reach benchmark efficiency.",
+          "skill": "Tools & Systems",
+          "status": "LOCKED",
+          "xp": 50,
+          "project": "Build and deploy a benchmark project using Node.js / Express"
+        },
+        {
+          "id": "task_4",
+          "phase": "Month 4",
+          "milestoneTitle": "Industry Capstone & Portfolio Readiness",
+          "title": "Complete End-to-End Capstone Portfolio",
+          "description": "Synthesize all learned domains into a production-grade portfolio project ready for technical review.",
+          "skill": "Portfolio",
+          "status": "LOCKED",
+          "xp": 100,
+          "project": "Publish comprehensive Backend Software Engineer Capstone Repo & System Docs"
+        }
+      ]
+    }
+  },
+  "badges": {
+    "usr_0sdhg4oph": [
+      {
+        "id": "first-quest",
+        "title": "🚀 First Quest",
+        "description": "Completed your first cognitive challenge",
+        "icon": "Rocket",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:22:12.597Z"
+      },
+      {
+        "id": "logic-master",
+        "title": "🧠 Logic Master",
+        "description": "Achieved 85+ Logical Reasoning score",
+        "icon": "Brain",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:22:12.597Z"
+      },
+      {
+        "id": "creative-thinker",
+        "title": "🎨 Creative Thinker",
+        "description": "Achieved 85+ Creativity score",
+        "icon": "Sparkles",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:22:12.597Z"
+      },
+      {
+        "id": "problem-solver",
+        "title": "🔍 Problem Solver",
+        "description": "Achieved 85+ Problem Solving score",
+        "icon": "Target",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:22:12.597Z"
+      },
+      {
+        "id": "career-explorer",
+        "title": "🧭 Career Explorer",
+        "description": "Explored career matching recommendations",
+        "icon": "Compass",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:22:12.597Z"
+      },
+      {
+        "id": "roadmap-starter",
+        "title": "📍 Roadmap Starter",
+        "description": "Completed your first roadmap milestone task",
+        "icon": "CheckCircle",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:22:12.597Z"
+      },
+      {
+        "id": "career-ready",
+        "title": "🏆 Career Ready",
+        "description": "Reached Level 5 Mastery or completed major roadmap milestones",
+        "icon": "Trophy",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:22:12.597Z"
+      }
+    ],
+    "usr_iwrmr8fbd": [
+      {
+        "id": "first-quest",
+        "title": "🚀 First Quest",
+        "description": "Completed your first cognitive challenge",
+        "icon": "Rocket",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:22:12.633Z"
+      },
+      {
+        "id": "logic-master",
+        "title": "🧠 Logic Master",
+        "description": "Achieved 85+ Logical Reasoning score",
+        "icon": "Brain",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:22:12.633Z"
+      },
+      {
+        "id": "creative-thinker",
+        "title": "🎨 Creative Thinker",
+        "description": "Achieved 85+ Creativity score",
+        "icon": "Sparkles",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:22:12.633Z"
+      },
+      {
+        "id": "problem-solver",
+        "title": "🔍 Problem Solver",
+        "description": "Achieved 85+ Problem Solving score",
+        "icon": "Target",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:22:12.633Z"
+      },
+      {
+        "id": "career-explorer",
+        "title": "🧭 Career Explorer",
+        "description": "Explored career matching recommendations",
+        "icon": "Compass",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:22:12.633Z"
+      },
+      {
+        "id": "roadmap-starter",
+        "title": "📍 Roadmap Starter",
+        "description": "Completed your first roadmap milestone task",
+        "icon": "CheckCircle",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:22:12.633Z"
+      },
+      {
+        "id": "career-ready",
+        "title": "🏆 Career Ready",
+        "description": "Reached Level 5 Mastery or completed major roadmap milestones",
+        "icon": "Trophy",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:22:12.633Z"
+      }
+    ],
+    "demo_user": [
+      {
+        "id": "first-quest",
+        "title": "🚀 First Quest",
+        "description": "Completed your first cognitive challenge",
+        "icon": "Rocket",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:25:32.192Z"
+      },
+      {
+        "id": "logic-master",
+        "title": "🧠 Logic Master",
+        "description": "Achieved 85+ Logical Reasoning score",
+        "icon": "Brain",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:25:32.192Z"
+      },
+      {
+        "id": "creative-thinker",
+        "title": "🎨 Creative Thinker",
+        "description": "Achieved 85+ Creativity score",
+        "icon": "Sparkles",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:25:40.369Z"
+      },
+      {
+        "id": "problem-solver",
+        "title": "🔍 Problem Solver",
+        "description": "Achieved 85+ Problem Solving score",
+        "icon": "Target",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:25:40.369Z"
+      },
+      {
+        "id": "career-explorer",
+        "title": "🧭 Career Explorer",
+        "description": "Explored career matching recommendations",
+        "icon": "Compass",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:25:40.369Z"
+      },
+      {
+        "id": "roadmap-starter",
+        "title": "📍 Roadmap Starter",
+        "description": "Completed your first roadmap milestone task",
+        "icon": "CheckCircle",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:25:40.369Z"
+      },
+      {
+        "id": "career-ready",
+        "title": "🏆 Career Ready",
+        "description": "Reached Level 5 Mastery or completed major roadmap milestones",
+        "icon": "Trophy",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:25:40.369Z"
+      }
+    ],
+    "usr_kfvys0cf7": [
+      {
+        "id": "first-quest",
+        "title": "🚀 First Quest",
+        "description": "Completed your first cognitive challenge",
+        "icon": "Rocket",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:29:24.842Z"
+      },
+      {
+        "id": "logic-master",
+        "title": "🧠 Logic Master",
+        "description": "Achieved 85+ Logical Reasoning score",
+        "icon": "Brain",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:29:24.842Z"
+      },
+      {
+        "id": "creative-thinker",
+        "title": "🎨 Creative Thinker",
+        "description": "Achieved 85+ Creativity score",
+        "icon": "Sparkles",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:29:24.842Z"
+      },
+      {
+        "id": "problem-solver",
+        "title": "🔍 Problem Solver",
+        "description": "Achieved 85+ Problem Solving score",
+        "icon": "Target",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:29:24.842Z"
+      },
+      {
+        "id": "career-explorer",
+        "title": "🧭 Career Explorer",
+        "description": "Explored career matching recommendations",
+        "icon": "Compass",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:29:24.842Z"
+      },
+      {
+        "id": "roadmap-starter",
+        "title": "📍 Roadmap Starter",
+        "description": "Completed your first roadmap milestone task",
+        "icon": "CheckCircle",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:29:24.842Z"
+      },
+      {
+        "id": "career-ready",
+        "title": "🏆 Career Ready",
+        "description": "Reached Level 5 Mastery or completed major roadmap milestones",
+        "icon": "Trophy",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:29:24.842Z"
+      }
+    ],
+    "usr_3aisds805": [
+      {
+        "id": "first-quest",
+        "title": "🚀 First Quest",
+        "description": "Completed your first cognitive challenge",
+        "icon": "Rocket",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:29:24.876Z"
+      },
+      {
+        "id": "logic-master",
+        "title": "🧠 Logic Master",
+        "description": "Achieved 85+ Logical Reasoning score",
+        "icon": "Brain",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:29:24.876Z"
+      },
+      {
+        "id": "creative-thinker",
+        "title": "🎨 Creative Thinker",
+        "description": "Achieved 85+ Creativity score",
+        "icon": "Sparkles",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:29:24.876Z"
+      },
+      {
+        "id": "problem-solver",
+        "title": "🔍 Problem Solver",
+        "description": "Achieved 85+ Problem Solving score",
+        "icon": "Target",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:29:24.876Z"
+      },
+      {
+        "id": "career-explorer",
+        "title": "🧭 Career Explorer",
+        "description": "Explored career matching recommendations",
+        "icon": "Compass",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:29:24.876Z"
+      },
+      {
+        "id": "roadmap-starter",
+        "title": "📍 Roadmap Starter",
+        "description": "Completed your first roadmap milestone task",
+        "icon": "CheckCircle",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:29:24.876Z"
+      },
+      {
+        "id": "career-ready",
+        "title": "🏆 Career Ready",
+        "description": "Reached Level 5 Mastery or completed major roadmap milestones",
+        "icon": "Trophy",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:29:24.876Z"
+      }
+    ],
+    "usr_qbxwfexeo": [
+      {
+        "id": "first-quest",
+        "title": "🚀 First Quest",
+        "description": "Completed your first cognitive challenge",
+        "icon": "Rocket",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:30:41.287Z"
+      },
+      {
+        "id": "logic-master",
+        "title": "🧠 Logic Master",
+        "description": "Achieved 85+ Logical Reasoning score",
+        "icon": "Brain",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:30:41.287Z"
+      },
+      {
+        "id": "creative-thinker",
+        "title": "🎨 Creative Thinker",
+        "description": "Achieved 85+ Creativity score",
+        "icon": "Sparkles",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:30:41.287Z"
+      },
+      {
+        "id": "problem-solver",
+        "title": "🔍 Problem Solver",
+        "description": "Achieved 85+ Problem Solving score",
+        "icon": "Target",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:30:41.287Z"
+      },
+      {
+        "id": "career-explorer",
+        "title": "🧭 Career Explorer",
+        "description": "Explored career matching recommendations",
+        "icon": "Compass",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:30:41.287Z"
+      },
+      {
+        "id": "roadmap-starter",
+        "title": "📍 Roadmap Starter",
+        "description": "Completed your first roadmap milestone task",
+        "icon": "CheckCircle",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:30:41.287Z"
+      },
+      {
+        "id": "career-ready",
+        "title": "🏆 Career Ready",
+        "description": "Reached Level 5 Mastery or completed major roadmap milestones",
+        "icon": "Trophy",
+        "unlocked": true,
+        "unlockedAt": "2026-08-13T17:30:41.287Z"
+      }
+    ]
+  }
+}
